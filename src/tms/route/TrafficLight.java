@@ -1,0 +1,44 @@
+package tms.route;
+
+/**
+ * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/route/TrafficLight.html)
+ * public class TrafficLight extends object
+ *
+ * Represents a traffic light signal on a route, indicating whether vehicles can proceed past the route's destination
+   intersection.
+ *
+ * Inherited methods from class Object: clone, equals, finalize, getClass, hashCode, notify, notifyAll,
+       toString, wait, wait, wait
+ */
+public class TrafficLight{
+    // Note while the JavaDoc says that the class should be initialised as 'public class TrafficLight extends Object',
+    // the method already implicitly extends Object (as all objects in Java which are not explicit subclasses extend
+    // Object).
+
+    private TrafficSignal signal;
+
+    /**
+     * Creates a traffic light with an intial color of TrafficSignal.RED
+     */
+    public TrafficLight(){
+           this.signal = TrafficSignal.RED;
+    }
+
+    /**
+     * Get the traffic light signal currently displayed by the light
+     * @return the displayed traffic light signal
+     */
+    public TrafficSignal getSignal(){
+        return signal;
+    }
+
+    /**
+     * Sets the displayed traffic light signal to a new value
+     * Note: this method has no logic and as such will allow changing a red light to green immediately.
+     *
+     * @param signal the new traffic light signal
+     */
+    public void setSignal(TrafficSignal signal){
+        this.signal = signal;
+    }
+}

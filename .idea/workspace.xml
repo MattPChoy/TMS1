@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZF0vnJpFcKGjeyJ8aGH8WiS9yG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyProgrammingLab" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SimpleDisplay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tms.display.SimpleDisplay" />
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.display.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SimpleDisplay" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\matth\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\matth\Documents\Uni\CSSE2002\CSSE2002_Assignment1" />
+          <option name="myCopyRoot" value="C:\Users\matth\Documents\Uni\CSSE2002\CSSE2002_Assignment1" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\matth\Documents\Uni\CSSE2002\CSSE2002_Assignment1" />
+          <option name="myCopyRoot" value="C:\Users\matth\Documents\Uni\CSSE2002\CSSE2002_Assignment1" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="" />
+      <created>1584419767413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584419767413</updated>
+      <workItem from="1584419770504" duration="5746000" />
+      <workItem from="1584441871904" duration="4251000" />
+      <workItem from="1584497491432" duration="1977000" />
+      <workItem from="1584522732954" duration="2316000" />
+    </task>
+    <task id="LOCAL-00001" summary="Implemented DemoPressurePad.countTraffic, &#10;Changed implementation of DemoPressurePad.getCongestion to use the super keyword&#10;&#10;Implemented an instance in DemoSensor named timeSinceEpoch to represent the simulated passage of time&#10;Properly implemented DemoSensor.getCurrentValue method to actually return data.&#10;Properly implemented the DemoSensor.oneSecond method.&#10;&#10;Implemented the DemoSpeedCamera.getThreshold to return an actual value and not a placeholder.&#10;Implemenetd the DemoSpeedCamera.averageSpeed to return an actual value and not a placeholder.&#10;&#10;Still need to implement the">
+      <created>1584570558189</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584570558189</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented DemoPressurePad.countTraffic, &#10;Changed implementation of DemoPressurePad.getCongestion to use the super keyword&#10;&#10;Implemented an instance in DemoSensor named timeSinceEpoch to represent the simulated passage of time&#10;Properly implemented DemoSensor.getCurrentValue method to actually return data.&#10;Properly implemented the DemoSensor.oneSecond method.&#10;&#10;Implemented the DemoSpeedCamera.getThreshold to return an actual value and not a placeholder.&#10;Implemenetd the DemoSpeedCamera.averageSpeed to return an actual value and not a placeholder.&#10;&#10;Still need to implement the" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented DemoPressurePad.countTraffic, &#10;Changed implementation of DemoPressurePad.getCongestion to use the super keyword&#10;&#10;Implemented an instance in DemoSensor named timeSinceEpoch to represent the simulated passage of time&#10;Properly implemented DemoSensor.getCurrentValue method to actually return data.&#10;Properly implemented the DemoSensor.oneSecond method.&#10;&#10;Implemented the DemoSpeedCamera.getThreshold to return an actual value and not a placeholder.&#10;Implemenetd the DemoSpeedCamera.averageSpeed to return an actual value and not a placeholder.&#10;&#10;Still need to implement the" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1584442166134">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584442166134" />
+    <state x="503" y="134" key="CommitChangelistDialog2" timestamp="1584570556108">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="503" y="134" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584570556108" />
+    <state x="2336" y="44" key="FileChooserDialogImpl" timestamp="1584522759206">
+      <screen x="1920" y="-456" width="1080" height="1920" />
+    </state>
+    <state x="2336" y="44" key="FileChooserDialogImpl/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522759206" />
+    <state x="740" y="281" key="FileChooserDialogImpl/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441863555" />
+    <state width="1877" height="195" key="GridCell.Tab.0.bottom" timestamp="1584441870205">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="195" key="GridCell.Tab.0.bottom/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
+    <state width="1877" height="195" key="GridCell.Tab.0.center" timestamp="1584441870205">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="195" key="GridCell.Tab.0.center/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
+    <state width="1877" height="195" key="GridCell.Tab.0.left" timestamp="1584441870205">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="195" key="GridCell.Tab.0.left/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
+    <state width="1877" height="195" key="GridCell.Tab.0.right" timestamp="1584441870205">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="195" key="GridCell.Tab.0.right/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
+    <state x="2289" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1584522732046">
+      <screen x="1920" y="-456" width="1080" height="1920" />
+    </state>
+    <state x="2289" y="189" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522732046" />
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584497516267" />
+    <state x="664" y="1519" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584421768031">
+      <screen x="0" y="1086" width="1920" height="1080" />
+    </state>
+    <state x="664" y="1519" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.1086.1920.1080" timestamp="1584421768031" />
+    <state x="777" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584441951788">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="777" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441951788" />
+    <state x="1992" y="-353" width="954" height="744" maximized="true" key="dock-window-1" timestamp="1584497510786">
+      <screen x="1920" y="-345" width="1080" height="1920" />
+    </state>
+    <state x="1992" y="-353" width="954" height="744" maximized="true" key="dock-window-1/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584497510786" />
+    <state x="1920" y="124" key="new project wizard" timestamp="1584522754244">
+      <screen x="1920" y="-456" width="1080" height="1920" />
+    </state>
+    <state x="1920" y="124" key="new project wizard/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522754244" />
+    <state x="783" y="444" key="svn.upgradeDialog" timestamp="1584441865822">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="783" y="444" key="svn.upgradeDialog/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441865822" />
+    <state x="719" y="405" key="svn4idea.checkout.options" timestamp="1584441864989">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="719" y="405" key="svn4idea.checkout.options/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441864989" />
+  </component>
+</project>

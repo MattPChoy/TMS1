@@ -1,0 +1,19 @@
+package tms.sensors;
+
+/**
+ * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/sensors/PressurePad.html)
+ * public PressurePad extends Sensor
+ *
+ * A type of sensor that measures the number of vehicles waiting at a fixed point on a route.
+ *
+ *
+ */
+public interface PressurePad extends Sensor{
+    /**
+     * Returns the number of vehicles number of vehicles currently waiting on the pressure pad.
+     * @return the current traffic count reported by the pressure pad
+     */
+    int countTraffic();
+
+
+}
