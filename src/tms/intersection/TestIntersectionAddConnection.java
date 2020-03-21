@@ -1,15 +1,17 @@
 package tms.intersection;
 
+import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import tms.util.RouteNotFoundException;
 
 public class TestIntersectionAddConnection {
     /**
-     * Test if a positive default speed creates a connection
+     * Test if a positive default speed creates a connection or route
      */
     @Test
-    public void addConnection1(){
+    public void intersectionAddConnection_ValidValues1(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -20,7 +22,7 @@ public class TestIntersectionAddConnection {
      * Test if a default speed of 0 creates creates a connection
      */
     @Test
-    public void addConnection2(){
+    public void intersectionAddConnection_ValidValues2(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -33,7 +35,7 @@ public class TestIntersectionAddConnection {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test (expected = IllegalArgumentException.class)
-    public void addConnection3(){
+    public void intersectionAddConnection_InvalidValues1(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -47,7 +49,7 @@ public class TestIntersectionAddConnection {
      * Test if an IllegalStateException is thrown if the connection already exists.
      */
     @Test (expected = IllegalStateException.class)
-    public void addConnection4(){
+    public void intersectionAddConnection_ExistingRoute(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -59,9 +61,24 @@ public class TestIntersectionAddConnection {
      * Test if a circular route is able to be created
      */
     @Test
-    public void addConnection5(){
+    public void intersectionAddConnection_CircularRoute(){
         Intersection A = new Intersection("A");
 
         A.addConnection(A, 10);
+    }
+
+    /**
+     * Test if the route ID (as derived from the toString method) is formatted correctly (from:to)
+     */
+    @Test
+    public void intersectionAddConnection_toString() throws RouteNotFoundException {
+        Intersection A = new Intersection("A");
+        Intersection B = new Intersection("B");
+
+        A.addConnection(B, 10);
+
+        String expectedRouteId = "B:A:10:0"; // from:to:speedLimit:numberOfSensors
+
+        Assert.assertEquals(expectedRouteId, A.getConnection(B).toString());
     }
 }

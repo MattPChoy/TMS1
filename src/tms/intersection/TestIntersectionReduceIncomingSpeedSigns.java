@@ -59,4 +59,20 @@ public class TestIntersectionReduceIncomingSpeedSigns {
     }
 
 
+
+    /**
+     * Test that speed signs can be
+     */
+    @Test
+    public void intersectionAddConnection_SpeedSignReduction1() throws RouteNotFoundException {
+        Intersection A = new Intersection("A");
+        Intersection B = new Intersection("B");
+
+        A.addConnection(B, 15);
+
+        A.getConnection(B).addSpeedSign(100);
+        A.reduceIncomingSpeedSigns();
+
+        Assert.assertEquals(90, A.getConnection(B).getSpeed());
+    }
 }

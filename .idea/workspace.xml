@@ -5,7 +5,9 @@
       <change afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/Intersection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/Intersection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/IntersectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/IntersectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionReduceIncomingSpeedSigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionReduceIncomingSpeedSigns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/route/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/route/RouteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/RouteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,20 +38,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyProgrammingLab" />
   </component>
-  <component name="RunManager" selected="JUnit.TestIntersectionReduceIncomingSpeedSigns.reduceIncomingSpeedSigns2">
-    <configuration name="SimpleDisplay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tms.display.SimpleDisplay" />
-      <module name="CSSE2002_Assignment1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tms.display.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestIntersectionReduceIncomingSpeedSigns.intersectionAddConnection_SpeedSignReduction1">
     <configuration name="IntersectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
@@ -80,6 +69,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestIntersectionAddConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.intersection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tms.intersection" />
+      <option name="MAIN_CLASS_NAME" value="tms.intersection.TestIntersectionAddConnection" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestIntersectionReduceIncomingSpeedSigns.intersectionAddConnection_SpeedSignReduction1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.intersection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tms.intersection" />
+      <option name="MAIN_CLASS_NAME" value="tms.intersection.TestIntersectionReduceIncomingSpeedSigns" />
+      <option name="METHOD_NAME" value="intersectionAddConnection_SpeedSignReduction1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestIntersectionReduceIncomingSpeedSigns.reduceIncomingSpeedSigns2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
@@ -98,10 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestIntersectionReduceIncomingSpeedSigns.intersectionAddConnection_SpeedSignReduction1" />
+        <item itemvalue="JUnit.TestIntersectionAddConnection" />
         <item itemvalue="JUnit.TestIntersectionReduceIncomingSpeedSigns.reduceIncomingSpeedSigns2" />
         <item itemvalue="JUnit.RouteTest" />
         <item itemvalue="JUnit.IntersectionTest" />
-        <item itemvalue="Application.SimpleDisplay" />
       </list>
     </recent_temporary>
   </component>
@@ -172,9 +193,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584442166134" />
-    <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2" timestamp="1584591175476">
+    <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2" timestamp="1584755312729">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
+    <state x="0" y="238" key="CommitChangelistDialog2/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755312729" />
     <state x="503" y="134" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584570556108" />
     <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591175476" />
     <state x="416" y="500" key="FileChooserDialogImpl" timestamp="1584591188656">
@@ -183,28 +205,28 @@
     <state x="2336" y="44" key="FileChooserDialogImpl/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522759206" />
     <state x="740" y="281" key="FileChooserDialogImpl/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441863555" />
     <state x="416" y="500" key="FileChooserDialogImpl/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591188656" />
-    <state width="1037" height="529" key="GridCell.Tab.0.bottom" timestamp="1584754582716">
+    <state width="1037" height="529" key="GridCell.Tab.0.bottom" timestamp="1584755289771">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584754582716" />
+    <state width="1037" height="529" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289771" />
     <state width="1877" height="195" key="GridCell.Tab.0.bottom/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.bottom/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321253" />
-    <state width="1037" height="529" key="GridCell.Tab.0.center" timestamp="1584754582715">
+    <state width="1037" height="529" key="GridCell.Tab.0.center" timestamp="1584755289770">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.center/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584754582715" />
+    <state width="1037" height="529" key="GridCell.Tab.0.center/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289770" />
     <state width="1877" height="195" key="GridCell.Tab.0.center/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.center/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="529" key="GridCell.Tab.0.left" timestamp="1584754582715">
+    <state width="1037" height="529" key="GridCell.Tab.0.left" timestamp="1584755289770">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.left/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584754582715" />
+    <state width="1037" height="529" key="GridCell.Tab.0.left/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289770" />
     <state width="1877" height="195" key="GridCell.Tab.0.left/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.left/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="529" key="GridCell.Tab.0.right" timestamp="1584754582715">
+    <state width="1037" height="529" key="GridCell.Tab.0.right" timestamp="1584755289771">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.right/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584754582715" />
+    <state width="1037" height="529" key="GridCell.Tab.0.right/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289771" />
     <state width="1877" height="195" key="GridCell.Tab.0.right/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.right/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
     <state x="369" y="645" key="com.intellij.ide.util.TipDialog" timestamp="1584589933875">

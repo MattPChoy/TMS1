@@ -90,7 +90,9 @@ public class Route {
      */
     public int getSpeed(){
         // call the getSensor() method and iterate through to check if they are speed signs, else return speed limit.
-        return speedLimit;
+        if (hasSpeedSign()){
+            return speedSign.getCurrentSpeed();
+        } else return speedLimit;
     }
 
     /**
