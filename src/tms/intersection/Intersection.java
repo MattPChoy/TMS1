@@ -22,6 +22,7 @@ public class Intersection {
     private String id;
     protected List<Route> incomingRoutes = new ArrayList<>();
     List<Intersection> connections = new ArrayList<>();
+    // private List<TrafficLight> trafficLights = new ArrayList<>(); // For Assignment 2 - @186 on Piazza
 
     /**
      * Creates an intersection with the given identifier
@@ -51,7 +52,7 @@ public class Intersection {
      * @return a list of routes;
      */
     public List<Route> getConnections(){
-        return incomingRoutes; // Using ArrayList as a placeholder.
+        return new ArrayList<>(this.incomingRoutes); // Return a copy so that the instance variable is not edited.
     }
 
     /**
@@ -113,7 +114,7 @@ public class Intersection {
         connections.add(from); // This list is created for the getConnectedIntersections method.
 
         // Implementation - "If this intersection (Intersection from) has an IntersectionLights, a new traffic light
-        // signal should be added to the route.
+        // signal should be added to the route. @186 on Piazza - For Assignment 2.
 
     }
 
@@ -130,9 +131,16 @@ public class Intersection {
     public void reduceIncomingSpeedSigns(){
         for (Route r: incomingRoutes){
             if (r.hasSpeedSign()){
-                int newSpeedLimit = r.getSpeed() - 10;
-
-                r.setSpeedLimit(Math.max(newSpeedLimit, 50));
+                int speedLimit = r.getSpeed();
+                System.out.print("Intersection.reduceIncomingSpeedSigns: Reducing speed limit from: " + speedLimit);
+                if (speedLimit > 50){
+                    if (speedLimit-10 < 50){
+                        r.setSpeedLimit(50);
+                    }
+                    else{
+                        r.setSpeedLimit(speedLimit-10);
+                    }
+                }
             }
         }
     }
