@@ -32,7 +32,7 @@ public class RouteTest {
 
     // Test that the traffic light is instantiated with the correct signal
     @Test
-    public void getTrafficLight_TestSignal() throws RouteNotFoundException {
+    public void getTrafficLight_TestSignal(){
         Intersection i = new Intersection("A");
         Route r = new Route("routeID", i, 40);
         r.addTrafficLight();
@@ -40,7 +40,7 @@ public class RouteTest {
     }
     // Test that the traffic light is instantiated with the correct signal
     @Test
-    public void setSignal_CorrectSignalValue() throws RouteNotFoundException {
+    public void setSignal_CorrectSignalValue(){
         Intersection i = new Intersection("A");
         Route r = new Route("routeID", i, 40);
         r.addTrafficLight();
@@ -283,39 +283,3 @@ public class RouteTest {
         Assert.assertEquals(expected, r.toString());
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

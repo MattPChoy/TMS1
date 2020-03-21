@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="">
+    <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="Finished test cases for all packages.&#10;&#10;Optimised Intersection.reduceIncomingSpeedSigns&#10;&#10;Fixed operation of the DemoSensor.oneSecond method which was looping back one 'second' too early.">
       <change afterPath="$PROJECT_DIR$/src/tms/route/SpeedSignTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tms/route/TrafficLightTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/Intersection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/Intersection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/route/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/route/RouteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/RouteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCameraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCameraTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,80 +42,82 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyProgrammingLab" />
   </component>
-  <component name="RunManager" selected="JUnit.IntersectionTest">
-    <configuration name="IntersectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DemoSpeedCameraTest.toString_CorrectOutput">
+    <configuration name="DemoPressurePadTest.countTraffic_correctValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tms.intersection.*" />
+          <option name="PATTERN" value="tms.sensors.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tms.intersection" />
-      <option name="MAIN_CLASS_NAME" value="tms.intersection.IntersectionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RouteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSSE2002_Assignment1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tms.route.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tms.route" />
-      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RouteTest.getSensors_InstanceVariableIsNotEdited" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSSE2002_Assignment1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tms.route.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tms.route" />
-      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
-      <option name="METHOD_NAME" value="getSensors_InstanceVariableIsNotEdited" />
+      <option name="PACKAGE_NAME" value="tms.sensors" />
+      <option name="MAIN_CLASS_NAME" value="tms.sensors.DemoPressurePadTest" />
+      <option name="METHOD_NAME" value="countTraffic_correctValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RouteTest.getSensors_NoSensorsReturnsEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DemoPressurePadTest.getCongestion_correctValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tms.route.*" />
+          <option name="PATTERN" value="tms.sensors.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tms.route" />
-      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
-      <option name="METHOD_NAME" value="getSensors_NoSensorsReturnsEmptyList" />
+      <option name="PACKAGE_NAME" value="tms.sensors" />
+      <option name="MAIN_CLASS_NAME" value="tms.sensors.DemoPressurePadTest" />
+      <option name="METHOD_NAME" value="getCongestion_correctValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RouteTest.getSensors_TwoSensorsReturnsPopulatedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DemoSpeedCameraTest.getAverageSpeed_CorrectValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tms.route.*" />
+          <option name="PATTERN" value="tms.sensors.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tms.route" />
-      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
-      <option name="METHOD_NAME" value="getSensors_TwoSensorsReturnsPopulatedList" />
+      <option name="PACKAGE_NAME" value="tms.sensors" />
+      <option name="MAIN_CLASS_NAME" value="tms.sensors.DemoSpeedCameraTest" />
+      <option name="METHOD_NAME" value="getAverageSpeed_CorrectValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoSpeedCameraTest.getCongestion_IsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.sensors.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tms.sensors" />
+      <option name="MAIN_CLASS_NAME" value="tms.sensors.DemoSpeedCameraTest" />
+      <option name="METHOD_NAME" value="getCongestion_IsCorrect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoSpeedCameraTest.toString_CorrectOutput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.sensors.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tms.sensors" />
+      <option name="MAIN_CLASS_NAME" value="tms.sensors.DemoSpeedCameraTest" />
+      <option name="METHOD_NAME" value="toString_CorrectOutput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IntersectionTest" />
-        <item itemvalue="JUnit.RouteTest" />
-        <item itemvalue="JUnit.RouteTest.getSensors_InstanceVariableIsNotEdited" />
-        <item itemvalue="JUnit.RouteTest.getSensors_TwoSensorsReturnsPopulatedList" />
-        <item itemvalue="JUnit.RouteTest.getSensors_NoSensorsReturnsEmptyList" />
+        <item itemvalue="JUnit.DemoSpeedCameraTest.toString_CorrectOutput" />
+        <item itemvalue="JUnit.DemoSpeedCameraTest.getCongestion_IsCorrect" />
+        <item itemvalue="JUnit.DemoPressurePadTest.getCongestion_correctValue" />
+        <item itemvalue="JUnit.DemoSpeedCameraTest.getAverageSpeed_CorrectValue" />
+        <item itemvalue="JUnit.DemoPressurePadTest.countTraffic_correctValue" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +203,8 @@
     <MESSAGE value="getSpeed now considers whether the route has a speed sign" />
     <MESSAGE value="unit tests for the Intersection package is done&#10;unit tests for the Route package midway done" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Finished test cases for all packages.&#10;&#10;Optimised Intersection.reduceIncomingSpeedSigns&#10;&#10;Fixed operation of the DemoSensor.oneSecond method which was looping back one 'second' too early." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished test cases for all packages.&#10;&#10;Optimised Intersection.reduceIncomingSpeedSigns&#10;&#10;Fixed operation of the DemoSensor.oneSecond method which was looping back one 'second' too early." />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1928" y="349" width="896" height="1736" maximized="true" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584769744173">
@@ -205,10 +215,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584442166134" />
-    <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2" timestamp="1584769523073">
-      <screen x="0" y="0" width="1080" height="1920" />
+    <state x="1920" y="252" width="1080" height="1587" key="CommitChangelistDialog2" timestamp="1584791386191">
+      <screen x="1920" y="14" width="1080" height="1920" />
     </state>
     <state x="0" y="238" key="CommitChangelistDialog2/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769523073" />
+    <state x="1920" y="252" key="CommitChangelistDialog2/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791386191" />
     <state x="503" y="134" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584570556108" />
     <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591175476" />
     <state x="416" y="500" key="FileChooserDialogImpl" timestamp="1584591188656">
@@ -217,30 +228,50 @@
     <state x="2336" y="44" key="FileChooserDialogImpl/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522759206" />
     <state x="740" y="281" key="FileChooserDialogImpl/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441863555" />
     <state x="416" y="500" key="FileChooserDialogImpl/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591188656" />
-    <state width="1037" height="549" key="GridCell.Tab.0.bottom" timestamp="1584769751478">
-      <screen x="0" y="0" width="1080" height="1920" />
+    <state width="1037" height="832" key="GridCell.Tab.0.bottom" timestamp="1584791386224">
+      <screen x="1920" y="14" width="1080" height="1920" />
     </state>
     <state width="1037" height="549" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751478" />
+    <state width="1037" height="832" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791386224" />
     <state width="1877" height="195" key="GridCell.Tab.0.bottom/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.bottom/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321253" />
-    <state width="1037" height="549" key="GridCell.Tab.0.center" timestamp="1584769751477">
-      <screen x="0" y="0" width="1080" height="1920" />
+    <state width="1037" height="832" key="GridCell.Tab.0.center" timestamp="1584791386224">
+      <screen x="1920" y="14" width="1080" height="1920" />
     </state>
     <state width="1037" height="549" key="GridCell.Tab.0.center/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751477" />
+    <state width="1037" height="832" key="GridCell.Tab.0.center/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791386224" />
     <state width="1877" height="195" key="GridCell.Tab.0.center/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.center/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="549" key="GridCell.Tab.0.left" timestamp="1584769751477">
-      <screen x="0" y="0" width="1080" height="1920" />
+    <state width="1037" height="832" key="GridCell.Tab.0.left" timestamp="1584791386223">
+      <screen x="1920" y="14" width="1080" height="1920" />
     </state>
     <state width="1037" height="549" key="GridCell.Tab.0.left/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751477" />
+    <state width="1037" height="832" key="GridCell.Tab.0.left/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791386223" />
     <state width="1877" height="195" key="GridCell.Tab.0.left/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.left/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="549" key="GridCell.Tab.0.right" timestamp="1584769751478">
-      <screen x="0" y="0" width="1080" height="1920" />
+    <state width="1037" height="832" key="GridCell.Tab.0.right" timestamp="1584791386224">
+      <screen x="1920" y="14" width="1080" height="1920" />
     </state>
     <state width="1037" height="549" key="GridCell.Tab.0.right/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751478" />
+    <state width="1037" height="832" key="GridCell.Tab.0.right/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791386224" />
     <state width="1877" height="195" key="GridCell.Tab.0.right/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.right/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
+    <state width="1037" height="698" key="GridCell.Tab.1.bottom" timestamp="1584791212061">
+      <screen x="1920" y="14" width="1080" height="1920" />
+    </state>
+    <state width="1037" height="698" key="GridCell.Tab.1.bottom/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791212061" />
+    <state width="1037" height="698" key="GridCell.Tab.1.center" timestamp="1584791212061">
+      <screen x="1920" y="14" width="1080" height="1920" />
+    </state>
+    <state width="1037" height="698" key="GridCell.Tab.1.center/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791212061" />
+    <state width="1037" height="698" key="GridCell.Tab.1.left" timestamp="1584791212061">
+      <screen x="1920" y="14" width="1080" height="1920" />
+    </state>
+    <state width="1037" height="698" key="GridCell.Tab.1.left/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791212061" />
+    <state width="1037" height="698" key="GridCell.Tab.1.right" timestamp="1584791212061">
+      <screen x="1920" y="14" width="1080" height="1920" />
+    </state>
+    <state width="1037" height="698" key="GridCell.Tab.1.right/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791212061" />
     <state x="369" y="645" key="com.intellij.ide.util.TipDialog" timestamp="1584589933875">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
@@ -261,6 +292,10 @@
     </state>
     <state x="1522" y="6" width="1053" height="1907" maximized="true" key="dock-window-1/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755753725" />
     <state x="1992" y="-353" width="954" height="744" maximized="true" key="dock-window-1/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584497510786" />
+    <state x="-8" y="-8" width="1053" height="1168" maximized="true" key="dock-window-2" timestamp="1584787433215">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-8" y="-8" width="1053" height="1168" maximized="true" key="dock-window-2/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584787433215" />
     <state x="0" y="580" key="new project wizard" timestamp="1584589963320">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>

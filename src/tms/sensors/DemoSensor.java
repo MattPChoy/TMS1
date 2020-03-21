@@ -62,7 +62,7 @@ public abstract class DemoSensor implements TimedItem{
     public void oneSecond() {
         timeSinceEpoch++;
 
-        if (timeSinceEpoch >= data.length-1){
+        if (timeSinceEpoch >= data.length){
             timeSinceEpoch=0;
         }
     }
