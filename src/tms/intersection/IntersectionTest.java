@@ -7,9 +7,11 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
     TestIntersectionConstructor.class,
-    TestIntersectionGetConnections.class,
-    TestIntersectionGetConnectedIntersections.class,
-    TestIntersectionAddConnection.class,
+        TestIntersectionGetConnections.class,
+        TestIntersectionGetConnectedIntersections.class,
+        TestIntersectionAddConnection.class,
+        TestIntersectionGetConnection.class,
+        TestIntersectionReduceIncomingSpeedSigns.class,
 })
 
 public class IntersectionTest {
