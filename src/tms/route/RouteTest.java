@@ -8,6 +8,9 @@ import tms.util.RouteNotFoundException;
 import java.util.List;
 
 public class RouteTest {
+    /**
+     * Test whether a route is properly instantiated.
+     */
     @Test
     public void RouteInstantiation1() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
@@ -17,5 +20,6 @@ public class RouteTest {
 
         // Get the route object
         Route r = A.getConnection(B);
+
     }
 }

@@ -13,5 +13,5 @@ import org.junit.runners.Suite.SuiteClasses;
 })
 
 public class IntersectionTest {
-
+    // Does nothing
 }

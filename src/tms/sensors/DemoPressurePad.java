@@ -24,7 +24,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      * @param threshold a threshold value that indicates which values represent high congestion
      * @requires data.length > 0
      */
-    public DemoPressurePad(int[] data, int threshold) {
+    protected DemoPressurePad(int[] data, int threshold) {
         super(data, threshold); // DemoSensor constructor stores values in super.data, super.threshold.
     }
 
@@ -51,7 +51,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      */
     @Override
     public int getCongestion() {
-        return (int) (((float) countTraffic() / (float) super.getThreshold())*100);
+        return (int) ((float) countTraffic() / (float) super.getThreshold());
     }
 
     /**
@@ -63,14 +63,5 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
     @Override
     public int getThreshold() {
         return super.getThreshold(); // DemoPressurePad -> PressurePad -> DemoSensor
-    }
-
-    /***
-     * Returns the string representation of this sensor.
-     * @return the string representation of the DemoPressurePad class instance.
-     */
-    @Override
-    public String toString() {
-        return "PP:" + super.toString();
     }
 }

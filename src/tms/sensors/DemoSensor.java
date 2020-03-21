@@ -74,8 +74,6 @@ public abstract class DemoSensor implements TimedItem{
       */
      @Override
      public String toString(){
-         String unpackedData = Arrays.toString(data).substring(1, Arrays.toString(data).length()-1)
-                 .replace(" ", "");
-         return (threshold + ":" + unpackedData);
+         return (threshold + ":" + Arrays.toString(data));
      }
 }
