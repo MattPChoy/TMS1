@@ -1,6 +1,8 @@
 package tms.route;
 
 import tms.intersection.Intersection;
+import tms.sensors.DemoPressurePad;
+import tms.sensors.DemoSpeedCamera;
 import tms.sensors.Sensor;
 import tms.util.DuplicateSensorException;
 
@@ -22,7 +24,10 @@ public class Route {
     private int speedLimit;
     private TrafficLight trafficLight;
     private SpeedSign speedSign = null; // If speedSign == null then a speedSign does not exist for this route.
-    private List<Sensor> sensors = new ArrayList<>();
+    private List<Sensor> sensors = new ArrayList<>(){{
+        add(null);
+        add(null);
+    }};
     private String id;
 
     /**
@@ -92,7 +97,8 @@ public class Route {
         // call the getSensor() method and iterate through to check if they are speed signs, else return speed limit.
         if (hasSpeedSign()){
             return speedSign.getCurrentSpeed();
-        } else return speedLimit;
+        }
+        return speedLimit;
     }
 
     /**
@@ -151,13 +157,18 @@ public class Route {
      * @throws  DuplicateSensorException if the sensor to add is of the same type as the sensor deployed on this route
      */
     public void addSensor(Sensor sensor) throws DuplicateSensorException{
-        for (Sensor s: sensors) {
-            if (s.getClass().toString().equals(sensor.getClass().toString())){
-                throw new DuplicateSensorException(); // By throwing this, the code block ends and code stops executing.
+        if (sensor.getClass().toString().equals(DemoPressurePad.class.toString())){
+            if (sensors.get(0) == null){
+                sensors.set(0, sensor);
             }
+            else throw new DuplicateSensorException();
         }
-
-        sensors.add(sensor);
+        else if (sensor.getClass().toString().equals(DemoSpeedCamera.class.toString())){
+            if (sensors.get(1) == null){
+                sensors.set(1, sensor);
+            }
+            else throw new DuplicateSensorException();
+        }
     }
 
 
@@ -184,15 +195,27 @@ public class Route {
      */
     @Override
     public String toString(){
-        // Obtain a list of all the sensors.
-        // Use a HashMap to look up sensors in alphabetical order.
-        // Pressure Plate - PP; Speed Camera - SC;
+        int numberOfSensors = 0;
+        if (sensors.get(0) != null) numberOfSensors++;
+        if (sensors.get(1) != null) numberOfSensors++;
 
-        //System.lineSeparator() should be used to separate lines.
-        //System.lineSeparator() should be used to separate lines.
-        //System.lineSeparator() should be used to separate lines.
-        //System.lineSeparator() should be used to separate lines.
+        StringBuilder stringRepresentation = new StringBuilder(id + ":" + speedLimit + ":" + numberOfSensors);
 
-        return (id + ":" + speedLimit + ":" + sensors.size());
+        if (this.hasSpeedSign()){
+            stringRepresentation.append(":").append(this.getSpeed());
+        }
+
+        if (sensors.get(0) != null){
+            if (sensors.get(0).getClass().toString().equals(DemoPressurePad.class.toString())){
+                stringRepresentation.append(System.lineSeparator()).append(sensors.get(0).toString());
+            }
+        }
+        if (sensors.get(1) != null) {
+            if (sensors.get(1).getClass().toString().equals(DemoSpeedCamera.class.toString())) {
+                stringRepresentation.append(System.lineSeparator()).append(sensors.get(1).toString());
+            }
+        }
+
+        return stringRepresentation.toString();
     }
 }

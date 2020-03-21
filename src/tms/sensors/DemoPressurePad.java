@@ -24,7 +24,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      * @param threshold a threshold value that indicates which values represent high congestion
      * @requires data.length > 0
      */
-    protected DemoPressurePad(int[] data, int threshold) {
+    public DemoPressurePad(int[] data, int threshold) {
         super(data, threshold); // DemoSensor constructor stores values in super.data, super.threshold.
     }
 

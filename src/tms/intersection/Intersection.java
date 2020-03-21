@@ -52,7 +52,8 @@ public class Intersection {
      * @return a list of routes;
      */
     public List<Route> getConnections(){
-        return new ArrayList<>(this.incomingRoutes); // Return a copy so that the instance variable is not edited.
+//        return this.incomingRoutes; // Return a copy so that the instance variable is not edited.
+        return new ArrayList<>(this.incomingRoutes);
     }
 
     /**

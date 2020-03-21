@@ -1,7 +1,8 @@
 package tms.route;
 
 enum TrafficSignal {
-    RED,
+    ERROR,
     GREEN,
-    BLUE
+    RED,
+    YELLOW
 }

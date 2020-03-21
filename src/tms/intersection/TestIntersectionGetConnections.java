@@ -8,15 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestIntersectionGetConnections {
-    /*
-     * Testing for the getConnections method
-     * getConnections1: Check that an empty list is returned when there are no connections/incoming routes
-     * getConnections2: Check that the correct list is returned when there is 1 route.
+    /**
+     * Test that a network with no routes returns an empty list.
      */
-
-    // Check that empty list is returned by getConnections when there are no incoming routes
     @Test
-    public void getConnections1(){
+    public void intersectionGetConnections_testEmptyNetwork(){
         Intersection A = new Intersection("A");
         List<Route> incomingRoutes = A.getConnections();
         List<Route> empty = new ArrayList<>();
@@ -24,9 +20,11 @@ public class TestIntersectionGetConnections {
         Assert.assertEquals(incomingRoutes, empty);
     }
 
-    // Check that the appropriate list is returned when there is 1 route.
+    /**
+     * Test that a network with one route returns the correct list
+     */
     @Test
-    public void getConnections2(){
+    public void intersectionGetConnections_testSingleRouteNetwork(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -36,5 +34,22 @@ public class TestIntersectionGetConnections {
         expectedRoutesA.add(new Route(B.getId() + ":" + A.getId(), B, 50));
 
         Assert.assertEquals(expectedRoutesA.get(0).getFrom(), incomingRoutesA.get(0).getFrom());
+    }
+
+    /**
+     * Test that the removal of nodes from the returned list does not change the instance variable.
+     */
+    // Check that the instance variable is not changed by modifying the output list
+    @Test
+    public void intersectionGetConnections_RemoveNodeTest(){
+        Intersection A = new Intersection("A");
+        Intersection B = new Intersection("B");
+
+        A.addConnection(B, 50);
+        List<Route> incomingRoutesA = A.getConnections();
+        List<Route> newIncomingRoutesA = new ArrayList<>(incomingRoutesA);
+        incomingRoutesA.remove(incomingRoutesA.get(0));
+
+        Assert.assertEquals(newIncomingRoutesA, A.getConnections());
     }
 }

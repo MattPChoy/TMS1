@@ -12,6 +12,7 @@ import org.junit.runners.Suite.SuiteClasses;
         TestIntersectionAddConnection.class,
         TestIntersectionGetConnection.class,
         TestIntersectionReduceIncomingSpeedSigns.class,
+        TestIntersectionToString.class
 })
 
 public class IntersectionTest {

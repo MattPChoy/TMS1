@@ -3,12 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionToString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/Intersection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/Intersection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/IntersectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/IntersectionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionConstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionConstructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnectedIntersections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnectedIntersections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnections.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionReduceIncomingSpeedSigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionReduceIncomingSpeedSigns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/route/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tms/route/RouteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/RouteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/route/TrafficSignal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/TrafficSignal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,22 +44,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyProgrammingLab" />
   </component>
-  <component name="RunManager" selected="JUnit.TestIntersectionReduceIncomingSpeedSigns.intersectionAddConnection_SpeedSignReduction1">
-    <configuration name="IntersectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSSE2002_Assignment1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tms.intersection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tms.intersection" />
-      <option name="MAIN_CLASS_NAME" value="tms.intersection.IntersectionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RouteTest.getSensors_TwoSensorsReturnsPopulatedList">
     <configuration name="RouteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
@@ -69,48 +60,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestIntersectionAddConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RouteTest.getSensors_NoSensorsReturnsEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tms.intersection.*" />
+          <option name="PATTERN" value="tms.route.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tms.intersection" />
-      <option name="MAIN_CLASS_NAME" value="tms.intersection.TestIntersectionAddConnection" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestIntersectionReduceIncomingSpeedSigns.intersectionAddConnection_SpeedSignReduction1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSSE2002_Assignment1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tms.intersection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tms.intersection" />
-      <option name="MAIN_CLASS_NAME" value="tms.intersection.TestIntersectionReduceIncomingSpeedSigns" />
-      <option name="METHOD_NAME" value="intersectionAddConnection_SpeedSignReduction1" />
+      <option name="PACKAGE_NAME" value="tms.route" />
+      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
+      <option name="METHOD_NAME" value="getSensors_NoSensorsReturnsEmptyList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestIntersectionReduceIncomingSpeedSigns.reduceIncomingSpeedSigns2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RouteTest.getSensors_TwoSensorsReturnsPopulatedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tms.intersection.*" />
+          <option name="PATTERN" value="tms.route.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tms.intersection" />
-      <option name="MAIN_CLASS_NAME" value="tms.intersection.TestIntersectionReduceIncomingSpeedSigns" />
-      <option name="METHOD_NAME" value="reduceIncomingSpeedSigns2" />
+      <option name="PACKAGE_NAME" value="tms.route" />
+      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
+      <option name="METHOD_NAME" value="getSensors_TwoSensorsReturnsPopulatedList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RouteTest.toString_speedSignAndSpeedCamera" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.route.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tms.route" />
+      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
+      <option name="METHOD_NAME" value="toString_speedSignAndSpeedCamera" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RouteTest.toString_speedSignAndTwoSensors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE2002_Assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tms.route.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tms.route" />
+      <option name="MAIN_CLASS_NAME" value="tms.route.RouteTest" />
+      <option name="METHOD_NAME" value="toString_speedSignAndTwoSensors" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestIntersectionReduceIncomingSpeedSigns.intersectionAddConnection_SpeedSignReduction1" />
-        <item itemvalue="JUnit.TestIntersectionAddConnection" />
-        <item itemvalue="JUnit.TestIntersectionReduceIncomingSpeedSigns.reduceIncomingSpeedSigns2" />
+        <item itemvalue="JUnit.RouteTest.getSensors_TwoSensorsReturnsPopulatedList" />
+        <item itemvalue="JUnit.RouteTest.getSensors_NoSensorsReturnsEmptyList" />
         <item itemvalue="JUnit.RouteTest" />
-        <item itemvalue="JUnit.IntersectionTest" />
+        <item itemvalue="JUnit.RouteTest.toString_speedSignAndTwoSensors" />
+        <item itemvalue="JUnit.RouteTest.toString_speedSignAndSpeedCamera" />
       </list>
     </recent_temporary>
   </component>
@@ -186,9 +194,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented DemoPressurePad.countTraffic, &#10;Changed implementation of DemoPressurePad.getCongestion to use the super keyword&#10;&#10;Implemented an instance in DemoSensor named timeSinceEpoch to represent the simulated passage of time&#10;Properly implemented DemoSensor.getCurrentValue method to actually return data.&#10;Properly implemented the DemoSensor.oneSecond method.&#10;&#10;Implemented the DemoSpeedCamera.getThreshold to return an actual value and not a placeholder.&#10;Implemenetd the DemoSpeedCamera.averageSpeed to return an actual value and not a placeholder.&#10;&#10;Still need to implement the" />
     <MESSAGE value="Intersection.getConnectedIntersections now returns a copy of the instance variable connections (List&lt;Intersection) so that the original instance variable is not edited by anything outside the class.&#10;&#10;Unimplemented testToString.java removed.&#10;&#10;Route.getSensors now returns a copy of the instance variable sensors (List&lt;Sensor&gt;) so that the original instance variable is not edited by anything outside the class.&#10;&#10;Used the setSignal method in the TrafficLight constructor instead of explicitly defining the Enum TrafficSignal&#10;&#10;DemoSensor.oneSecond removed print&#10;&#10;Removed the protected constructor as it is not required nor specified in the JavaDoc.&#10;&#10;Added more descriptive comments for the getTimedItemManager method's singleton pattern.&#10;&#10;Implemented the TimedItemManager.oneSecond method so that it calls the oneSecond method for all registered implementation of the TimedItem interface." />
-    <option name="LAST_COMMIT_MESSAGE" value="Intersection.getConnectedIntersections now returns a copy of the instance variable connections (List&lt;Intersection) so that the original instance variable is not edited by anything outside the class.&#10;&#10;Unimplemented testToString.java removed.&#10;&#10;Route.getSensors now returns a copy of the instance variable sensors (List&lt;Sensor&gt;) so that the original instance variable is not edited by anything outside the class.&#10;&#10;Used the setSignal method in the TrafficLight constructor instead of explicitly defining the Enum TrafficSignal&#10;&#10;DemoSensor.oneSecond removed print&#10;&#10;Removed the protected constructor as it is not required nor specified in the JavaDoc.&#10;&#10;Added more descriptive comments for the getTimedItemManager method's singleton pattern.&#10;&#10;Implemented the TimedItemManager.oneSecond method so that it calls the oneSecond method for all registered implementation of the TimedItem interface." />
+    <MESSAGE value="getSpeed now considers whether the route has a speed sign" />
+    <option name="LAST_COMMIT_MESSAGE" value="getSpeed now considers whether the route has a speed sign" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="92" y="92" width="896" height="1736" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584768494364">
+      <screen x="0" y="0" width="1080" height="1920" />
+    </state>
+    <state x="92" y="92" width="896" height="1736" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584768494364" />
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1584442166134">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -205,28 +218,28 @@
     <state x="2336" y="44" key="FileChooserDialogImpl/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522759206" />
     <state x="740" y="281" key="FileChooserDialogImpl/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441863555" />
     <state x="416" y="500" key="FileChooserDialogImpl/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591188656" />
-    <state width="1037" height="529" key="GridCell.Tab.0.bottom" timestamp="1584755289771">
+    <state width="1037" height="549" key="GridCell.Tab.0.bottom" timestamp="1584768680352">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289771" />
+    <state width="1037" height="549" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584768680352" />
     <state width="1877" height="195" key="GridCell.Tab.0.bottom/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.bottom/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321253" />
-    <state width="1037" height="529" key="GridCell.Tab.0.center" timestamp="1584755289770">
+    <state width="1037" height="549" key="GridCell.Tab.0.center" timestamp="1584768680351">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.center/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289770" />
+    <state width="1037" height="549" key="GridCell.Tab.0.center/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584768680351" />
     <state width="1877" height="195" key="GridCell.Tab.0.center/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.center/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="529" key="GridCell.Tab.0.left" timestamp="1584755289770">
+    <state width="1037" height="549" key="GridCell.Tab.0.left" timestamp="1584768680351">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.left/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289770" />
+    <state width="1037" height="549" key="GridCell.Tab.0.left/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584768680351" />
     <state width="1877" height="195" key="GridCell.Tab.0.left/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.left/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="529" key="GridCell.Tab.0.right" timestamp="1584755289771">
+    <state width="1037" height="549" key="GridCell.Tab.0.right" timestamp="1584768680351">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
-    <state width="1037" height="529" key="GridCell.Tab.0.right/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755289771" />
+    <state width="1037" height="549" key="GridCell.Tab.0.right/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584768680351" />
     <state width="1877" height="195" key="GridCell.Tab.0.right/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.right/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
     <state x="369" y="645" key="com.intellij.ide.util.TipDialog" timestamp="1584589933875">
@@ -244,15 +257,20 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="777" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441951788" />
-    <state x="1992" y="-353" width="954" height="744" maximized="true" key="dock-window-1" timestamp="1584497510786">
-      <screen x="1920" y="-345" width="1080" height="1920" />
+    <state x="1522" y="6" width="1053" height="1907" maximized="true" key="dock-window-1" timestamp="1584755753725">
+      <screen x="1080" y="14" width="1080" height="1920" />
     </state>
+    <state x="1522" y="6" width="1053" height="1907" maximized="true" key="dock-window-1/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584755753725" />
     <state x="1992" y="-353" width="954" height="744" maximized="true" key="dock-window-1/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584497510786" />
     <state x="0" y="580" key="new project wizard" timestamp="1584589963320">
       <screen x="0" y="0" width="1080" height="1920" />
     </state>
     <state x="1920" y="124" key="new project wizard/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522754244" />
     <state x="0" y="580" key="new project wizard/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584589963320" />
+    <state x="1283" y="459" width="672" height="678" key="search.everywhere.popup" timestamp="1584765889184">
+      <screen x="1080" y="14" width="1080" height="1920" />
+    </state>
+    <state x="1283" y="459" width="672" height="678" key="search.everywhere.popup/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584765889184" />
     <state x="783" y="444" key="svn.upgradeDialog" timestamp="1584441865822">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

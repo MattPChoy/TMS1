@@ -8,7 +8,7 @@ import tms.util.RouteNotFoundException;
 public class TestIntersectionReduceIncomingSpeedSigns {
     // Test if we can firstly add create a route and add a speed sign to it
     @Test
-    public void reduceIncomingSpeedSigns1() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValidInputs() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -19,60 +19,68 @@ public class TestIntersectionReduceIncomingSpeedSigns {
         BA.addSpeedSign(routeInitialSpeed);
     }
 
-    // Test if we can reduce the speed of incoming routes.
+    // Test that speeds below 50km/h are not changed by calling the reduceIncomingSpeedSigns method.
     @Test
-    public void reduceIncomingSpeedSigns2() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValueBelow50() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
-        Intersection C = new Intersection("C");
-        Intersection D = new Intersection("D");
 
         // Intersections B,C -> Intersection A
         System.out.println(A.getConnections());
 
         int routeBAInitialSpeed = 60; // Speeds above 60 should be reduced by 10.
         A.addConnection(B, routeBAInitialSpeed);
-
-        int routeCAInitialSpeed = 49; // Speeds under 50 should remain unchanged
-        A.addConnection(C, routeCAInitialSpeed);
-
-        int routeDAInitialSpeed = 51; // Speeds from 51 to 59 should be reduced to 50
-        A.addConnection(D, routeDAInitialSpeed);
-
         Route BA = A.getConnection(B);
-        Route CA = A.getConnection(C);
-        Route DA = A.getConnection(D);
-
         BA.addSpeedSign(routeBAInitialSpeed);
-        CA.addSpeedSign(routeCAInitialSpeed);
-        DA.addSpeedSign(routeDAInitialSpeed);
 
         A.reduceIncomingSpeedSigns();
-
         int newBASpeed = BA.getSpeed();
-        int newCASpeed = CA.getSpeed();
-        int newDASpeed = DA.getSpeed();
-
         Assert.assertEquals(routeBAInitialSpeed, newBASpeed+10);
-        Assert.assertEquals(50, newCASpeed);
-        Assert.assertEquals(50, newDASpeed);
     }
 
-
-
-    /**
-     * Test that speed signs can be
-     */
+    // Test that speeds from 51km/h to 60km/hr are reduced to 50km/hr
     @Test
-    public void intersectionAddConnection_SpeedSignReduction1() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValuesBetween() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
+        Intersection C = new Intersection("C");
 
-        A.addConnection(B, 15);
+        int routeBAInitialSpeed = 51; // Speeds above 60 should be reduced by 10.
+        int routeCAInitialSpeed = 59;
+        A.addConnection(B, routeBAInitialSpeed);
+        A.addConnection(C, routeCAInitialSpeed);
+        Route BA = A.getConnection(B);
+        Route CA = A.getConnection(C);
+        BA.addSpeedSign(routeBAInitialSpeed);
+        CA.addSpeedSign(routeCAInitialSpeed);
 
-        A.getConnection(B).addSpeedSign(100);
         A.reduceIncomingSpeedSigns();
+        int newBASpeed = BA.getSpeed();
+        int newCASpeed = CA.getSpeed();
+        Assert.assertEquals(50, newBASpeed);
+        Assert.assertEquals(50, newCASpeed);
+    }
 
-        Assert.assertEquals(90, A.getConnection(B).getSpeed());
+    // Test that speeds above 61km/hr are reduced by 10km/hr
+    @Test
+    public void reduceIncomingSpeedSigns_ValuesAbove() throws RouteNotFoundException {
+        Intersection A = new Intersection("A");
+        Intersection B = new Intersection("B");
+        Intersection C = new Intersection("C");
+
+        int routeBAInitialSpeed = 100; // Speeds above 60 should be reduced by 10.
+        int routeCAInitialSpeed = 90;
+        A.addConnection(B, routeBAInitialSpeed);
+        A.addConnection(C, routeCAInitialSpeed);
+        Route BA = A.getConnection(B);
+        Route CA = A.getConnection(C);
+        BA.addSpeedSign(routeBAInitialSpeed);
+        CA.addSpeedSign(routeCAInitialSpeed);
+
+        A.reduceIncomingSpeedSigns();
+        int newBASpeed = BA.getSpeed();
+        int newCASpeed = CA.getSpeed();
+        Assert.assertEquals(routeBAInitialSpeed-10, newBASpeed);
+        Assert.assertEquals(routeCAInitialSpeed-10, newCASpeed);
     }
 }
