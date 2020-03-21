@@ -16,17 +16,17 @@ public class TestIntersectionGetConnections {
 
     // Check that empty list is returned by getConnections when there are no incoming routes
     @Test
-    public void getConnections1(){
+    public void intersectionGetConnections_NoIncomingRoutes(){
         Intersection A = new Intersection("A");
         List<Route> incomingRoutes = A.getConnections();
-        List<Route> empty = new ArrayList<>();
+        List<Route> emptyList = new ArrayList<>();
 
-        Assert.assertEquals(incomingRoutes, empty);
+        Assert.assertEquals(incomingRoutes, emptyList);
     }
 
     // Check that the appropriate list is returned when there is 1 route.
     @Test
-    public void getConnections2(){
+    public void intersectionGetConnections_OneIncomingRoute(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -36,5 +36,19 @@ public class TestIntersectionGetConnections {
         expectedRoutesA.add(new Route(B.getId() + ":" + A.getId(), B, 50));
 
         Assert.assertEquals(expectedRoutesA.get(0).getFrom(), incomingRoutesA.get(0).getFrom());
+    }
+
+    // Check that the instance variable is not changed by modifying the output list
+    @Test
+    public void intersectionGetConnections_ModifyOutputList(){
+        Intersection A = new Intersection("A");
+        Intersection B = new Intersection("B");
+
+        A.addConnection(B, 50);
+        List<Route> incomingRoutesA = A.getConnections();
+        List<Route> newIncomingRoutesA = new ArrayList<>(incomingRoutesA);
+        incomingRoutesA.remove(incomingRoutesA.get(0));
+
+        Assert.assertEquals(A.getConnections(), newIncomingRoutesA);
     }
 }

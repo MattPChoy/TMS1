@@ -5,27 +5,27 @@ import org.junit.Test;
 import tms.util.RouteNotFoundException;
 
 public class TestIntersectionConstructor {
-    // Check that the intersection stores and returns the correct value for ID.
+    // Check that an instance of Intersection is created when the intersection id is a sensible value
     @Test
-    public void getId1(){
+    public void intersectionInstantiation_SensibleValue(){
         String intersectionID = "A";
         Intersection A = new Intersection(intersectionID);
+
         Assert.assertEquals(intersectionID, A.getId());
     }
 
-    // Check that the intersection is instantiated when we give it an empty id, as it is technically a valid string
+    // Check that an instance of Intersection is created when the intersection id is an empty string literal
     @Test
-    public void Intersection2(){
+    public void intersectionInstantiation_EmptyStringLiteral(){
         String intersectionID = "";
-        Intersection A = new Intersection(intersectionID);
-        Assert.assertEquals(intersectionID, A.getId());
+        Intersection B = new Intersection(intersectionID);
+        Assert.assertEquals(intersectionID, B.getId());
     }
 
 
-    //Check that the intersection is instantiated when the id is passed as null
-
+    // Check that an instance of Intersection is created when the intersection id is a null string
     @Test
-    public void Intersection3(){
-        Intersection A = new Intersection(null);
+    public void intersectionInstantiation_NullString(){
+        Intersection C = new Intersection(null);
     }
 }

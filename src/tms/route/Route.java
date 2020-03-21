@@ -1,7 +1,10 @@
 package tms.route;
 
 import tms.intersection.Intersection;
+import tms.sensors.DemoPressurePad;
+import tms.sensors.DemoSpeedCamera;
 import tms.sensors.Sensor;
+import tms.sensors.SpeedCamera;
 import tms.util.DuplicateSensorException;
 
 import java.util.ArrayList;
@@ -20,9 +23,12 @@ public class Route {
 
     private Intersection from; // The intersection from which this route originates from
     private int speedLimit;
-    private TrafficLight trafficLight;
+    private TrafficLight trafficLight = null;
     private SpeedSign speedSign = null; // If speedSign == null then a speedSign does not exist for this route.
-    private List<Sensor> sensors = new ArrayList<>();
+    private List<Sensor> sensors = new ArrayList<>(){{
+        add(null);
+        add(null);
+    }};
     private String id;
 
     /**
@@ -53,6 +59,7 @@ public class Route {
         }
         else {
             this.speedSign = new SpeedSign(initialSpeed);
+            this.speedLimit = initialSpeed; // TODO confirm that this is supposed to be set.
         }
 
     }
@@ -89,7 +96,10 @@ public class Route {
      * @return the current speed limit of this route
      */
     public int getSpeed(){
-        // call the getSensor() method and iterate through to check if they are speed signs, else return speed limit.
+        if (hasSpeedSign()){
+            return speedSign.getCurrentSpeed();
+        }
+
         return speedLimit;
     }
 
@@ -155,7 +165,12 @@ public class Route {
             }
         }
 
-        sensors.add(sensor);
+        if (sensor.getClass() == DemoPressurePad.class){
+            sensors.set(0, sensor);
+        }
+        else if (sensor.getClass() == DemoSpeedCamera.class){
+            sensors.set(1, sensor);
+        }
     }
 
 
@@ -183,14 +198,20 @@ public class Route {
     @Override
     public String toString(){
         // Obtain a list of all the sensors.
-        // Use a HashMap to look up sensors in alphabetical order.
+        // Use a HashMap to look up sensors in alphabetical order?
         // Pressure Plate - PP; Speed Camera - SC;
 
-        //System.lineSeparator() should be used to separate lines.
-        //System.lineSeparator() should be used to separate lines.
-        //System.lineSeparator() should be used to separate lines.
-        //System.lineSeparator() should be used to separate lines.
+        StringBuilder stringRepr = new StringBuilder(id + ":" + speedLimit + ":" + sensors.size());
 
-        return (id + ":" + speedLimit + ":" + sensors.size());
+        if (hasSpeedSign()){
+            stringRepr.append(": ").append(speedSign.getCurrentSpeed());
+        }
+
+        if (sensors.get(0) != null){
+            stringRepr.append(sensors.get(0).toString()).append(System.lineSeparator());
+        } else if (sensors.get(1) != null){
+            stringRepr.append((sensors.get(0).toString())).append(System.lineSeparator());
+        }
+        return (stringRepr.toString()); // TODO Test this class!
     }
 }
