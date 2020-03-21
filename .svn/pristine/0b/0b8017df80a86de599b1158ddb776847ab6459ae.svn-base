@@ -59,6 +59,7 @@ public class Route {
         }
         else {
             this.speedSign = new SpeedSign(initialSpeed);
+            this.speedLimit = initialSpeed; // TODO confirm that this is supposed to be set.
         }
 
     }
@@ -95,6 +96,10 @@ public class Route {
      * @return the current speed limit of this route
      */
     public int getSpeed(){
+        if (hasSpeedSign()){
+            return speedSign.getCurrentSpeed();
+        }
+
         if (hasSpeedSign()){
             return speedSign.getCurrentSpeed();
         }

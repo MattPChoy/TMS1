@@ -61,4 +61,13 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera{
 
         return super.getCurrentValue();
     }
+
+    /***
+     * Returns the string representation of this sensor.
+     * @return the string representation of the DemoSpeedCamera class instance.
+     */
+    @Override
+    public String toString() {
+        return "SC:" + super.toString();
+    }
 }

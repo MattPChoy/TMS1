@@ -62,8 +62,8 @@ public class RouteTest {
     @Test
     public void getSensors_TwoSensorsReturnsPopulatedList() throws DuplicateSensorException {
         Route r = new Route("routeID", new Intersection("A"), 4);
-        Sensor sensor1 = new DemoPressurePad(new int[] {1,2,3,4}, 44);
-        Sensor sensor2 = new DemoSpeedCamera(new int[] {1,2,3,4}, 44);
+        Sensor sensor1 = new DemoSpeedCamera(new int[] {1,2,3,4}, 44);
+        Sensor sensor2 = new DemoPressurePad(new int[] {1,2,3,4}, 44);
 
         r.addSensor(sensor1);
         r.addSensor(sensor2);
@@ -82,8 +82,8 @@ public class RouteTest {
     @Test
     public void getSensors_InstanceVariableIsNotEdited() throws DuplicateSensorException {
         Route r = new Route("routeID", new Intersection("B"), 4);
-        Sensor sensor1 = new DemoPressurePad(new int[] {1,2,3}, 44);
-        Sensor sensor2 = new DemoSpeedCamera(new int[] {1,2,3}, 44);
+        Sensor sensor1 = new DemoSpeedCamera(new int[] {1,2,3}, 44);
+        Sensor sensor2 = new DemoPressurePad(new int[] {1,2,3}, 44);
 
         r.addSensor(sensor1);
         r.addSensor(sensor2);

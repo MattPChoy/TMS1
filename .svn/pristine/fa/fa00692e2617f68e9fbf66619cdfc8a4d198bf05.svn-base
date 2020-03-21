@@ -135,7 +135,12 @@ public class Intersection {
                 int speedLimit = r.getSpeed();
                 System.out.print("Intersection.reduceIncomingSpeedSigns: Reducing speed limit from: " + speedLimit);
                 if (speedLimit > 50){
-                    r.setSpeedLimit(Math.max(speedLimit - 10, 50));
+                    if (speedLimit-10 < 50){
+                        r.setSpeedLimit(50);
+                    }
+                    else{
+                        r.setSpeedLimit(speedLimit-10);
+                    }
                 }
             }
         }

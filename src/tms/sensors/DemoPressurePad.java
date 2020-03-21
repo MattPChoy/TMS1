@@ -51,7 +51,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      */
     @Override
     public int getCongestion() {
-        return (int) ((float) countTraffic() / (float) super.getThreshold());
+        return (int) (((float) countTraffic() / (float) super.getThreshold())*100);
     }
 
     /**
@@ -63,5 +63,14 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
     @Override
     public int getThreshold() {
         return super.getThreshold(); // DemoPressurePad -> PressurePad -> DemoSensor
+    }
+
+    /***
+     * Returns the string representation of this sensor.
+     * @return the string representation of the DemoPressurePad class instance.
+     */
+    @Override
+    public String toString() {
+        return "PP:" + super.toString();
     }
 }

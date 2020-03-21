@@ -15,9 +15,9 @@ public class TestIntersectionGetConnections {
     public void intersectionGetConnections_testEmptyNetwork(){
         Intersection A = new Intersection("A");
         List<Route> incomingRoutes = A.getConnections();
-        List<Route> emptyList = new ArrayList<>();
+        List<Route> empty = new ArrayList<>();
 
-        Assert.assertEquals(incomingRoutes, emptyList);
+        Assert.assertEquals(incomingRoutes, empty);
     }
 
     /**
