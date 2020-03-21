@@ -15,6 +15,6 @@ import org.junit.runners.Suite.SuiteClasses;
         TestIntersectionToString.class
 })
 
-public class IntersectionTest {
-
+public class TestIntersectionClasses {
+    // Entry Point
 }

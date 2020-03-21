@@ -26,7 +26,6 @@ public class TestIntersectionReduceIncomingSpeedSigns {
         Intersection B = new Intersection("B");
 
         // Intersections B,C -> Intersection A
-        System.out.println(A.getConnections());
 
         int routeBAInitialSpeed = 60; // Speeds above 60 should be reduced by 10.
         A.addConnection(B, routeBAInitialSpeed);

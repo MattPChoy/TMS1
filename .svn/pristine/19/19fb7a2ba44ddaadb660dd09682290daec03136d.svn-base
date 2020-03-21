@@ -36,6 +36,8 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera{
         float average = (float) averageSpeed();
         float threshold = (float) getThreshold();
 
+        System.out.print(average + "/" + threshold);
+
         return (int) ((average/threshold)*((float) 100));
 
     }
