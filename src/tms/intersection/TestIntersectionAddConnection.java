@@ -11,7 +11,7 @@ public class TestIntersectionAddConnection {
      * Test if a positive default speed creates a connection or route
      */
     @Test
-    public void intersectionAddConnection_ValidValues1(){
+    public void addConnection_testValidValuesPositive(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -22,7 +22,7 @@ public class TestIntersectionAddConnection {
      * Test if a default speed of 0 creates creates a connection
      */
     @Test
-    public void intersectionAddConnection_ValidValues2(){
+    public void addConnection_testValidValuesZero(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -35,7 +35,7 @@ public class TestIntersectionAddConnection {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test (expected = IllegalArgumentException.class)
-    public void intersectionAddConnection_InvalidValues1(){
+    public void addConnection_testInvalidValuesNegativeThrowsIllegalArgumentException(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -49,7 +49,7 @@ public class TestIntersectionAddConnection {
      * Test if an IllegalStateException is thrown if the connection already exists.
      */
     @Test (expected = IllegalStateException.class)
-    public void intersectionAddConnection_ExistingRoute(){
+    public void addConnection_testExistingRouteThrowsIllegalStateException(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -61,7 +61,7 @@ public class TestIntersectionAddConnection {
      * Test if a circular route is able to be created
      */
     @Test
-    public void intersectionAddConnection_CircularRoute(){
+    public void addConnection_testCircularRoute(){
         Intersection A = new Intersection("A");
 
         A.addConnection(A, 10);
@@ -71,7 +71,7 @@ public class TestIntersectionAddConnection {
      * Test if the route ID (as derived from the toString method) is formatted correctly (from:to)
      */
     @Test
-    public void intersectionAddConnection_toString() throws RouteNotFoundException {
+    public void addConnection_testToString() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -86,7 +86,7 @@ public class TestIntersectionAddConnection {
      * Test that the intersection class can call the reduceIncomingSpeedSigns() method.
      */
     @Test
-    public void intersectionAddConnection_SpeedSignReduction1() throws RouteNotFoundException {
+    public void addConnection_testSpeedSignReduction() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 

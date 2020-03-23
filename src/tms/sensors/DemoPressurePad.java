@@ -51,10 +51,16 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      */
     @Override
     public int getCongestion() {
+
+        int CONGESTION_LOWER_BOUND = 0;
+        int CONGESTION_UPPER_BOUND = 100;
+
         float count = (float) countTraffic();
         float threshold = (float) getThreshold();
 
-        return (int) ((count/threshold)*(float) 100);
+        int congestion = (int) ((count/threshold)*(float) 100);
+
+        return Math.max(CONGESTION_LOWER_BOUND, Math.min(congestion, CONGESTION_UPPER_BOUND));
     }
 
     /**

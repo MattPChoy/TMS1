@@ -8,7 +8,7 @@ import tms.util.RouteNotFoundException;
 public class TestIntersectionGetConnection {
     // Test that the method returns the correct route
     @Test
-    public void getConnection_ReturnsCorrectRoute() throws RouteNotFoundException {
+    public void getConnection_testReturnsCorrectRoute() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -23,7 +23,7 @@ public class TestIntersectionGetConnection {
 
     // Test that the method throws a RouteNotFoundException when a route is not found
     @Test (expected = RouteNotFoundException.class)
-    public void getConnection_ThrowsRouteNotFoundException() throws RouteNotFoundException {
+    public void getConnection_testNoRouteThrowsRouteNotFoundException() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 

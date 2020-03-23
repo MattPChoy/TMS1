@@ -1,0 +1,20 @@
+package tms.intersection;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+@RunWith(Suite.class)
+@SuiteClasses({
+    TestIntersectionConstructor.class,
+        TestIntersectionGetConnections.class,
+        TestIntersectionGetConnectedIntersections.class,
+        TestIntersectionAddConnection.class,
+        TestIntersectionGetConnection.class,
+        TestIntersectionReduceIncomingSpeedSigns.class,
+        TestIntersectionToString.class
+})
+
+public class TestIntersectionClasses {
+    // Entry Point
+}

@@ -8,7 +8,7 @@ import tms.util.RouteNotFoundException;
 public class TestIntersectionReduceIncomingSpeedSigns {
     // Test if we can firstly add create a route and add a speed sign to it
     @Test
-    public void reduceIncomingSpeedSigns_testValidInputs() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValidInputs() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -21,7 +21,7 @@ public class TestIntersectionReduceIncomingSpeedSigns {
 
     // Test that speeds below 50km/h are not changed by calling the reduceIncomingSpeedSigns method.
     @Test
-    public void reduceIncomingSpeedSigns_testValueBelow50() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValueBelow50() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -39,7 +39,7 @@ public class TestIntersectionReduceIncomingSpeedSigns {
 
     // Test that speeds from 51km/h to 60km/hr are reduced to 50km/hr
     @Test
-    public void reduceIncomingSpeedSigns_testValuesBetween() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValuesBetween() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
         Intersection C = new Intersection("C");
@@ -62,7 +62,7 @@ public class TestIntersectionReduceIncomingSpeedSigns {
 
     // Test that speeds above 61km/hr are reduced by 10km/hr
     @Test
-    public void reduceIncomingSpeedSigns_testValuesAbove() throws RouteNotFoundException {
+    public void reduceIncomingSpeedSigns_ValuesAbove() throws RouteNotFoundException {
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
         Intersection C = new Intersection("C");
@@ -81,20 +81,5 @@ public class TestIntersectionReduceIncomingSpeedSigns {
         int newCASpeed = CA.getSpeed();
         Assert.assertEquals(routeBAInitialSpeed-10, newBASpeed);
         Assert.assertEquals(routeCAInitialSpeed-10, newCASpeed);
-    }
-
-    // Test that a route with no speed sign is not affected
-    @Test
-    public void reduceIncomingSpeedSign_testRouteWithNoSpeedSignRemainsUnchanged() throws RouteNotFoundException {
-        Intersection A = new Intersection("A");
-        Intersection B = new Intersection("B");
-
-        A.addConnection(B, 100);
-
-        Route BA = A.getConnection(B);
-
-        A.reduceIncomingSpeedSigns();
-
-        Assert.assertEquals(100, BA.getSpeed());
     }
 }

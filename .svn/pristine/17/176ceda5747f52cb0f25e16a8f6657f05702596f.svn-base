@@ -33,15 +33,10 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera{
         // Typecast the outputs of the averageSpeed and getThreshold methods to floats, as otherwise integer division
         // would be performed.
 
-        int CONGESTION_LOWER_BOUND = 0;
-        int CONGESTION_UPPER_BOUND = 100;
-
         float average = (float) averageSpeed();
         float threshold = (float) getThreshold();
 
-        int congestion = (int) ((average/threshold)*((float) 100));
-
-        return Math.max(CONGESTION_LOWER_BOUND, Math.min(congestion, CONGESTION_UPPER_BOUND));
+        return (int) ((average/threshold)*((float) 100));
 
     }
 

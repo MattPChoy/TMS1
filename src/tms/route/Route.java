@@ -85,7 +85,30 @@ public class Route {
      * @return list of all sensors on this route
      */
     public List<Sensor> getSensors(){
-        return new ArrayList<>(this.sensors); // Return a cloned copy of the list so that this.sensors cannot be edited.
+        if (sensors.get(0) == null){
+            if (sensors.get(1) == null){
+                // No Sensors
+                return new ArrayList<>();
+            }
+            else {
+                return new ArrayList<>() {{
+                    //  Sensors.get(0) is empty, Sensors.get(1) is full (No PressurePad, 1 Speed Camera)
+                    add(sensors.get(1));
+                }};
+            }
+        }
+        else{
+            // Sensor.get(0) holds a PressurePad
+            if (sensors.get(1) == null){
+                return new ArrayList<>(){{
+                    add(sensors.get(0));
+                }};
+            }
+
+            else{
+                return new ArrayList<>(sensors);
+            }
+        }
     }
 
     /**

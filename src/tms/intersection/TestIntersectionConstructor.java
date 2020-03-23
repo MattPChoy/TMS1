@@ -25,7 +25,7 @@ public class TestIntersectionConstructor {
 
     // Check that an instance of Intersection is created when the intersection id is a null string
     @Test
-    public void intersectionInstantiation_NullString(){
+    public void intersectionConstructor_testNullString(){
         Intersection C = new Intersection(null);
         Assert.assertNull(C.getId());
     }

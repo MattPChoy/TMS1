@@ -12,7 +12,7 @@ public class TestIntersectionGetConnections {
      * Test that a network with no routes returns an empty list.
      */
     @Test
-    public void intersectionGetConnections_testEmptyNetwork(){
+    public void getConnections_testEmptyNetwork(){
         Intersection A = new Intersection("A");
         List<Route> incomingRoutes = A.getConnections();
         List<Route> emptyList = new ArrayList<>();
@@ -24,7 +24,7 @@ public class TestIntersectionGetConnections {
      * Test that a network with one route returns the correct list
      */
     @Test
-    public void intersectionGetConnections_testSingleRouteNetwork(){
+    public void getConnections_testSingleRouteNetwork(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 
@@ -41,7 +41,7 @@ public class TestIntersectionGetConnections {
      */
     // Check that the instance variable is not changed by modifying the output list
     @Test
-    public void intersectionGetConnections_RemoveNodeTest(){
+    public void getConnections_testRemoveNode(){
         Intersection A = new Intersection("A");
         Intersection B = new Intersection("B");
 

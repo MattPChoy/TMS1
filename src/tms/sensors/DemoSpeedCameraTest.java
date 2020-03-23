@@ -6,7 +6,7 @@ import org.junit.Test;
 public class DemoSpeedCameraTest {
     // Test that the data is correct.
     @Test
-    public void DemoSpeedCamera_TestDataInput(){
+    public void demoSpeedCamera_testInstantiatedVariables(){
         DemoSpeedCamera d = new DemoSpeedCamera(new int[]{1,2,3,4,5}, 3);
 
         Assert.assertEquals("SC:3:1,2,3,4,5", d.toString());
@@ -22,19 +22,37 @@ public class DemoSpeedCameraTest {
 
     // Test that the getCongestion value is correct
     @Test
-    public void getCongestion_IsCorrect(){
+    public void getCongestion_testIsCorrect(){
         DemoSpeedCamera d = new DemoSpeedCamera(new int[]{300,2,3,4,5}, 3);
 
-        int expected = (int) (
-                ((float) 300 / (float) 3) * (float) 100
-        );
+        int expected = 100;
+
+        Assert.assertEquals(expected, d.getCongestion());
+    }
+
+    // Test that negative values return a congestion of 0.
+    @Test
+    public void getCongestion_testLowerBound(){
+        DemoSpeedCamera d = new DemoSpeedCamera(new int[]{-100}, 3);
+
+        int expected = 0;
+
+        Assert.assertEquals(expected, d.getCongestion());
+    }
+
+    // Test that negative values return a congestion of 0.
+    @Test
+    public void getCongestion_testUpperBound(){
+        DemoSpeedCamera d = new DemoSpeedCamera(new int[]{1000}, 3);
+
+        int expected = 100;
 
         Assert.assertEquals(expected, d.getCongestion());
     }
 
     // Test that the output of the toString method is correct
     @Test
-    public void toString_CorrectOutput(){
+    public void toString_testCorrectOutput(){
         DemoSpeedCamera d = new DemoSpeedCamera(new int[]{300,2,3,4,5}, 3);
 
         String expected = "SC:3:300,2,3,4,5";
