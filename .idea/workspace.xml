@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionAddConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionConstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionConstructor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnectedIntersections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnectedIntersections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionGetConnections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionReduceIncomingSpeedSigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/intersection/TestIntersectionReduceIncomingSpeedSigns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/route/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/route/SpeedSignTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/SpeedSignTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/route/TestRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/TestRoute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/route/TrafficLightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/route/TrafficLightTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoPressurePadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCameraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tms/sensors/DemoSpeedCameraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tms/JdkTest.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/tms/JdkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +164,9 @@
       <workItem from="1584589933788" duration="1245000" />
       <workItem from="1584834452000" duration="10156000" />
       <workItem from="1584919823732" duration="2411000" />
+      <workItem from="1584934956358" duration="506000" />
+      <workItem from="1585005039308" duration="1200000" />
+      <workItem from="1585016725036" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented DemoPressurePad.countTraffic, &#10;Changed implementation of DemoPressurePad.getCongestion to use the super keyword&#10;&#10;Implemented an instance in DemoSensor named timeSinceEpoch to represent the simulated passage of time&#10;Properly implemented DemoSensor.getCurrentValue method to actually return data.&#10;Properly implemented the DemoSensor.oneSecond method.&#10;&#10;Implemented the DemoSpeedCamera.getThreshold to return an actual value and not a placeholder.&#10;Implemenetd the DemoSpeedCamera.averageSpeed to return an actual value and not a placeholder.&#10;&#10;Still need to implement the">
       <created>1584570558189</created>
@@ -214,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584792752370</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactored the unit test names&#10;Added a test in GetConnectedIntersections which edits the returned copy of the unit variable and ensures that the unit variable is not edited.&#10;Added a test in ReduceIncomingSpeedSigns that ensures that routes with no speed signs remain unchanged.thrown&#10;Refactored the logic in getSensors to work properly for all 4 cases for which it can be called&#10;Added more unit tests in for the speed sign to more completely represent its usage">
+      <created>1584935403591</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584935403591</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,9 +224,14 @@
     <MESSAGE value="test" />
     <MESSAGE value="Finished test cases for all packages.&#10;&#10;Optimised Intersection.reduceIncomingSpeedSigns&#10;&#10;Fixed operation of the DemoSensor.oneSecond method which was looping back one 'second' too early." />
     <MESSAGE value="Created a master class which is able to call the test scripts for all packages&#10;Renamed some of the test classes so they are less ambiguous" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a master class which is able to call the test scripts for all packages&#10;Renamed some of the test classes so they are less ambiguous" />
+    <MESSAGE value="Refactored the unit test names&#10;Added a test in GetConnectedIntersections which edits the returned copy of the unit variable and ensures that the unit variable is not edited.&#10;Added a test in ReduceIncomingSpeedSigns that ensures that routes with no speed signs remain unchanged.thrown&#10;Refactored the logic in getSensors to work properly for all 4 cases for which it can be called&#10;Added more unit tests in for the speed sign to more completely represent its usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the unit test names&#10;Added a test in GetConnectedIntersections which edits the returned copy of the unit variable and ensures that the unit variable is not edited.&#10;Added a test in ReduceIncomingSpeedSigns that ensures that routes with no speed signs remain unchanged.thrown&#10;Refactored the logic in getSensors to work properly for all 4 cases for which it can be called&#10;Added more unit tests in for the speed sign to more completely represent its usage" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2052" y="199" key="#Notifications" timestamp="1584935281969">
+      <screen x="1920" y="-419" width="1080" height="1920" />
+    </state>
+    <state x="2052" y="199" key="#Notifications/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1584935281969" />
     <state x="-1928" y="349" width="896" height="1736" maximized="true" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584769744173">
       <screen x="-1920" y="357" width="1920" height="1080" />
     </state>
@@ -239,12 +240,13 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584442166134" />
-    <state x="0" y="134" width="1080" height="1587" key="CommitChangelistDialog2" timestamp="1584792747795">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="1920" y="-419" width="608" height="1920" key="CommitChangelistDialog2" timestamp="1584935396044">
+      <screen x="1920" y="-419" width="1080" height="1920" />
     </state>
     <state x="0" y="238" key="CommitChangelistDialog2/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769523073" />
     <state x="0" y="134" key="CommitChangelistDialog2/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792747795" />
     <state x="1920" y="252" key="CommitChangelistDialog2/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791518945" />
+    <state x="1920" y="-419" width="608" height="1920" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1584935396044" />
     <state x="503" y="134" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584570556108" />
     <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591175476" />
     <state x="416" y="500" key="FileChooserDialogImpl" timestamp="1584591188656">
@@ -313,12 +315,13 @@
     </state>
     <state width="1037" height="698" key="GridCell.Tab.1.right/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792838795" />
     <state width="1037" height="698" key="GridCell.Tab.1.right/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791212061" />
-    <state x="2289" y="226" key="com.intellij.ide.util.TipDialog" timestamp="1584934963916">
-      <screen x="1920" y="-419" width="1080" height="1920" />
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1585016732536">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="2289" y="226" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1584919824544" />
     <state x="656" y="363" key="com.intellij.ide.util.TipDialog/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584834471179" />
-    <state x="2289" y="226" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1584934963916" />
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585016732536" />
+    <state x="2289" y="226" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1585005038983" />
     <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584573734633" />
     <state x="2289" y="189" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522732046" />
     <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584497516267" />
