@@ -30,17 +30,15 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera{
      */
     @Override
     public int getCongestion() {
-        // Typecast the outputs of the averageSpeed and getThreshold methods to floats, as otherwise integer division
-        // would be performed.
-
-        int CONGESTION_LOWER_BOUND = 0;
-        int CONGESTION_UPPER_BOUND = 100;
 
         float average = (float) averageSpeed();
         float threshold = (float) getThreshold();
 
         int congestion = (int) ((average/threshold)*((float) 100));
 
+        // This is equivalent to saying CONGESTION_LOWER_BOUND <= congestion <= CONGESTION_UPPER_BOUND;
+        // Just a way of ensuring that the congestion is between 0 and 100 (inclusive).
+        // Note that the value of CONGESTION_LOWER_BOUND and CONGESTION_UPPER_BOUND are set in DemoSensor.
         return Math.max(CONGESTION_LOWER_BOUND, Math.min(congestion, CONGESTION_UPPER_BOUND));
 
     }
@@ -64,8 +62,6 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera{
      */
     @Override
     public int averageSpeed() {
-        // Specified by averageSpeed in the interface SpeedCamera.
-
         return super.getCurrentValue();
     }
 

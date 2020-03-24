@@ -16,7 +16,13 @@ import java.util.Arrays;
 public abstract class DemoSensor implements TimedItem{
     private int threshold;
     private int[] data;
-    private int timeSinceEpoch = 0;
+    private int timeUnits = 0;
+
+    // The lowest value a sensor's congestion value can be.
+    protected int CONGESTION_LOWER_BOUND = 0;
+
+    // The highest value a sensor's congestion value can be.
+    protected int CONGESTION_UPPER_BOUND = 100;
 
     /**
      * Creates a new sensor, using the given list of data values and threshold.
@@ -40,7 +46,7 @@ public abstract class DemoSensor implements TimedItem{
      * @return the current data value
      */
     protected int getCurrentValue(){
-        return data[timeSinceEpoch];
+        return data[timeUnits];
     }
 
     /**
@@ -60,10 +66,10 @@ public abstract class DemoSensor implements TimedItem{
      */
     @Override
     public void oneSecond() {
-        timeSinceEpoch++;
+        timeUnits++;
 
-        if (timeSinceEpoch >= data.length){
-            timeSinceEpoch=0;
+        if (timeUnits >= data.length){
+            timeUnits=0;
         }
     }
 

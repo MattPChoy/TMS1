@@ -14,6 +14,4 @@ public interface PressurePad extends Sensor{
      * @return the current traffic count reported by the pressure pad
      */
     int countTraffic();
-
-    // Inherited methods getCongestion, getThreshold
 }

@@ -18,9 +18,8 @@ import java.util.*;
  */
 
 public class Intersection {
-    // the unique string identifier for each intersection
-    private String id;
-    protected List<Route> incomingRoutes = new ArrayList<>();
+    private String id; // the unique string identifier for each intersection
+    private List<Route> incomingRoutes = new ArrayList<>();
     List<Intersection> connections = new ArrayList<>();
     // private List<TrafficLight> trafficLights = new ArrayList<>(); // For Assignment 2 - @186 on Piazza
 
@@ -33,7 +32,7 @@ public class Intersection {
      * @param id the unique string identifier for each intersection
      */
     public Intersection(String id){
-        this.id = id; // Update the private variable;
+        this.id = id; // Update the instance variable.
     }
 
     /**
@@ -52,7 +51,6 @@ public class Intersection {
      * @return a list of routes;
      */
     public List<Route> getConnections(){
-//        return this.incomingRoutes; // Return a copy so that the instance variable is not edited.
         return new ArrayList<>(this.incomingRoutes);
     }
 
@@ -147,9 +145,9 @@ public class Intersection {
      * @return the route that goes from 'from' to this intersection
      * @throws tms.util.RouteNotFoundException if no route exists from the given intersection to this intersection
      */
-    public Route getConnection(Intersection from) throws RouteNotFoundException{
-        // A (origin) --ROUTE A:B--> B(this)
-        // Therefore, Route A:B has to be a member of incomingRoutes.
+    public Route getConnection(Intersection from) throws RouteNotFoundException {
+        // the getConnection method creates a connection between the intersection "from" and this route.
+        // Intersection A (from) --ROUTE A:B--> Intersection B (this)
         for (Route r: incomingRoutes){
             String originRouteId = r.getFrom().getId();
             String expectedRouteId = from.getId();
@@ -159,7 +157,8 @@ public class Intersection {
             }
         }
 
-        // If code below this gets executed, it means that no match has been found
+        // The exception is only thrown if we have iterated through the whole of incomingRoutes and no
+        // matching routes have been found.
         throw new RouteNotFoundException();
     }
 
@@ -173,26 +172,7 @@ public class Intersection {
      * @return string representation of this intersection
      */
     @Override
-    public String toString(){
-        /*
-        // For Assignment 2 (@124 on Piazza)
-        List<TrafficLight> trafficLights = new ArrayList<>();
-
-        for (Route r: incomingRoutes){
-            if (r.getTrafficLight().getClass().toString().equals("tms.route.TrafficLight")){
-                trafficLights.add(r.getTrafficLight());
-            }
-        }
-
-        StringBuilder trafficLightsRepresentation = new StringBuilder();
-
-        for (TrafficLight t : trafficLights){
-            trafficLightsRepresentation.append(t.toString());
-        }
-        */
-
+    public String toString() {
         return (id);
     }
-
-
 }

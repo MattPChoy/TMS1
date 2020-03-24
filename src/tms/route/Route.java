@@ -4,7 +4,6 @@ import tms.intersection.Intersection;
 import tms.sensors.DemoPressurePad;
 import tms.sensors.DemoSpeedCamera;
 import tms.sensors.Sensor;
-import tms.sensors.SpeedCamera;
 import tms.util.DuplicateSensorException;
 
 import java.util.ArrayList;
@@ -21,15 +20,15 @@ import java.util.List;
  */
 public class Route {
 
-    private Intersection from; // The intersection from which this route originates from
-    private int speedLimit;
-    private TrafficLight trafficLight = null;
+    private String id;                  // The unique string identifier for this Route. Formatted as Route.FROM:Route.To
+    private int speedLimit;             // The speed limit of the route. Potentially overwritten by speedSign.getSpeed()
+    private Intersection from;          // The intersection from which this route originates from
     private SpeedSign speedSign = null; // If speedSign == null then a speedSign does not exist for this route.
+    private TrafficLight trafficLight = null;
     private List<Sensor> sensors = new ArrayList<>(){{
-        add(null);
-        add(null);
+        add(null); // Pressure Pad
+        add(null); // Speed Camera
     }};
-    private String id;
 
     /**
      * Creates a new route with the given ID, origin intersection and default speed.
@@ -54,7 +53,7 @@ public class Route {
         // Possibly instantiate a temporary instance and then pass it to the addSensor method?
 
         if (initialSpeed<0){
-            // If the initialSpeed parameter passed is negative
+            // If the initialSpeed parameter passed is negative, throw an IllegalArgumentException
             throw new IllegalArgumentException("The speed limit for this route is negative");
         }
         else {
@@ -67,7 +66,7 @@ public class Route {
      * Adds a TrafficLight signal to the route. It should default to RED.
      */
     public void addTrafficLight(){
-        this.trafficLight = new TrafficLight();
+        this.trafficLight = new TrafficLight(); // The TrafficSignal's value is set in the TrafficLight constructor.
     }
 
     /**
@@ -85,30 +84,15 @@ public class Route {
      * @return list of all sensors on this route
      */
     public List<Sensor> getSensors(){
-        if (sensors.get(0) == null){
-            if (sensors.get(1) == null){
-                // No Sensors
-                return new ArrayList<>();
-            }
-            else {
-                return new ArrayList<>() {{
-                    //  Sensors.get(0) is empty, Sensors.get(1) is full (No PressurePad, 1 Speed Camera)
-                    add(sensors.get(1));
-                }};
-            }
-        }
-        else{
-            // Sensor.get(0) holds a PressurePad
-            if (sensors.get(1) == null){
-                return new ArrayList<>(){{
-                    add(sensors.get(0));
-                }};
-            }
+        List<Sensor> sensorsToReturn = new ArrayList<>();
 
-            else{
-                return new ArrayList<>(sensors);
+        for (Sensor sensorObject: sensors){
+            if (!(sensorObject == null)){
+                sensorsToReturn.add(sensorObject);
             }
         }
+
+        return sensorsToReturn;
     }
 
     /**
@@ -165,13 +149,13 @@ public class Route {
             // update the speed on the road
             if (speedLimit < 0){
                 // Speed limit is negative
-                throw new IllegalArgumentException("The new speed limit for this route is negative");
+                throw new IllegalArgumentException("");
             }
 
             // Else, set the speed limit;
             this.speedSign.setCurrentSpeed(newSpeed);
         }
-        else throw new IllegalStateException("This route has no electronic speed sign");
+        else throw new IllegalStateException("");
     }
 
     /**
@@ -180,13 +164,13 @@ public class Route {
      * @throws  DuplicateSensorException if the sensor to add is of the same type as the sensor deployed on this route
      */
     public void addSensor(Sensor sensor) throws DuplicateSensorException{
-        if (sensor.getClass().toString().equals(DemoPressurePad.class.toString())){
+        if (sensor instanceof DemoPressurePad){
             if (sensors.get(0) == null){
                 sensors.set(0, sensor);
             }
             else throw new DuplicateSensorException();
         }
-        else if (sensor.getClass().toString().equals(DemoSpeedCamera.class.toString())){
+        else if (sensor instanceof DemoSpeedCamera){
             if (sensors.get(1) == null){
                 sensors.set(1, sensor);
             }

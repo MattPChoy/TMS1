@@ -12,7 +12,6 @@ package tms.sensors;
  * */
 
 public class DemoPressurePad extends DemoSensor implements PressurePad {
-    // Instance variable for the threshold value
 
     /**
      * Creates a new sensor, using the given list of data values and threshold.
@@ -51,15 +50,13 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      */
     @Override
     public int getCongestion() {
-
-        int CONGESTION_LOWER_BOUND = 0;
-        int CONGESTION_UPPER_BOUND = 100;
-
         float count = (float) countTraffic();
         float threshold = (float) getThreshold();
 
         int congestion = (int) ((count/threshold)*(float) 100);
 
+        // This is equivalent to saying CONGESTION_LOWER_BOUND <= congestion <= CONGESTION_UPPER_BOUND;
+        // Just a way of ensuring that the congestion is between 0 and 100 (inclusive).
         return Math.max(CONGESTION_LOWER_BOUND, Math.min(congestion, CONGESTION_UPPER_BOUND));
     }
 
@@ -71,7 +68,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      */
     @Override
     public int getThreshold() {
-        return super.getThreshold(); // DemoPressurePad -> PressurePad -> DemoSensor
+        return super.getThreshold();
     }
 
     /***

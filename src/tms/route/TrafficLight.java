@@ -11,14 +11,10 @@ package tms.route;
        toString, wait, wait, wait
  */
 public class TrafficLight{
-    // Note while the JavaDoc says that the class should be initialised as 'public class TrafficLight extends Object',
-    // the method already implicitly extends Object (as all objects in Java which are not explicit subclasses extend
-    // Object).
-
-    private TrafficSignal signal;
+    private TrafficSignal trafficSignal;
 
     /**
-     * Creates a traffic light with an intial color of TrafficSignal.RED
+     * Creates a traffic light with an initial color of TrafficSignal.RED
      */
     public TrafficLight(){
            setSignal(TrafficSignal.RED); // Initialise the traffic light as red.
@@ -29,7 +25,7 @@ public class TrafficLight{
      * @return the displayed traffic light signal
      */
     public TrafficSignal getSignal(){
-        return signal;
+        return trafficSignal;
     }
 
     /**
@@ -39,6 +35,6 @@ public class TrafficLight{
      * @param signal the new traffic light signal
      */
     public void setSignal(TrafficSignal signal){
-        this.signal = signal;
+        this.trafficSignal = signal;
     }
 }

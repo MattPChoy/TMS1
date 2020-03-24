@@ -10,14 +10,14 @@ package tms.route;
        notifyAll, toString, wait, wait, wait
  */
 public class SpeedSign {
-    private int speed;
+    private int displaySpeed;
 
     /**
      * Creates a new electronic speed sign with the initial displayed speed
      * @param initialSpeed the intial speed to be shown on the sign
      */
     public SpeedSign(int initialSpeed){
-        this.speed = initialSpeed;
+        this.displaySpeed = initialSpeed;
     }
 
     /**
@@ -25,7 +25,7 @@ public class SpeedSign {
      * @return the current speed limit displayed by the sign
      */
     public int getCurrentSpeed(){
-        return speed;
+        return displaySpeed;
     }
 
     /**
@@ -33,6 +33,6 @@ public class SpeedSign {
      * @param speed the new speed limit to display.
      * */
     public void setCurrentSpeed(int speed){
-        this.speed = speed;
+        this.displaySpeed = speed;
     }
 }
