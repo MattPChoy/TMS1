@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/tms/JdkTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="b244765c-22db-4149-8897-c61b2dd1dda5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +35,7 @@
       <recent name="C:\Users\matth\Documents\Uni\CSSE2002\CSSE2002_Assignment1\src\tms\display" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JdkTest">
+  <component name="RunManager" selected="JUnit.TestAll">
     <configuration name="DemoPressurePadTest.getCongestion_correctValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSSE2002_Assignment1" />
       <extension name="coverage">
@@ -118,9 +116,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestAll" />
         <item itemvalue="JUnit.JdkTest" />
         <item itemvalue="JUnit.DemoSpeedCameraTest.getCongestion_testIsCorrect" />
-        <item itemvalue="JUnit.TestAll" />
         <item itemvalue="JUnit.DemoPressurePadTest.getCongestion_correctValue" />
         <item itemvalue="JUnit.TestRoute.toString_speedSignAndTwoSensors" />
       </list>
@@ -166,7 +164,7 @@
       <workItem from="1584919823732" duration="2411000" />
       <workItem from="1584934956358" duration="506000" />
       <workItem from="1585005039308" duration="1200000" />
-      <workItem from="1585016725036" duration="510000" />
+      <workItem from="1585016725036" duration="1651000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented DemoPressurePad.countTraffic, &#10;Changed implementation of DemoPressurePad.getCongestion to use the super keyword&#10;&#10;Implemented an instance in DemoSensor named timeSinceEpoch to represent the simulated passage of time&#10;Properly implemented DemoSensor.getCurrentValue method to actually return data.&#10;Properly implemented the DemoSensor.oneSecond method.&#10;&#10;Implemented the DemoSpeedCamera.getThreshold to return an actual value and not a placeholder.&#10;Implemenetd the DemoSpeedCamera.averageSpeed to return an actual value and not a placeholder.&#10;&#10;Still need to implement the">
       <created>1584570558189</created>
@@ -210,7 +208,63 @@
       <option name="project" value="LOCAL" />
       <updated>1584935403591</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Testing the ability to remove files from being tracked by the svn repo but keeping a local copy.">
+      <created>1585017534164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585017534164</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test">
+      <created>1585017916743</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585017916743</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed 'illegal' files from intersection package.">
+      <created>1585018029124</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585018029124</updated>
+    </task>
+    <task id="LOCAL-00010" summary="removed other illegal files in remaining packages.">
+      <created>1585018167514</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585018167514</updated>
+    </task>
+    <task id="LOCAL-00011" summary="removed other illegal files in remaining packages.">
+      <created>1585018229454</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585018229454</updated>
+    </task>
+    <task id="LOCAL-00012" summary="removed other illegal files in remaining packages.">
+      <created>1585018244024</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1585018244024</updated>
+    </task>
+    <task id="LOCAL-00013" summary="removed other illegal files in remaining packages.">
+      <created>1585018306634</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585018306634</updated>
+    </task>
+    <task id="LOCAL-00014" summary="removed other illegal files in remaining packages.">
+      <created>1585018337880</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585018337880</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,11 +275,14 @@
     <MESSAGE value="Intersection.getConnectedIntersections now returns a copy of the instance variable connections (List&lt;Intersection) so that the original instance variable is not edited by anything outside the class.&#10;&#10;Unimplemented testToString.java removed.&#10;&#10;Route.getSensors now returns a copy of the instance variable sensors (List&lt;Sensor&gt;) so that the original instance variable is not edited by anything outside the class.&#10;&#10;Used the setSignal method in the TrafficLight constructor instead of explicitly defining the Enum TrafficSignal&#10;&#10;DemoSensor.oneSecond removed print&#10;&#10;Removed the protected constructor as it is not required nor specified in the JavaDoc.&#10;&#10;Added more descriptive comments for the getTimedItemManager method's singleton pattern.&#10;&#10;Implemented the TimedItemManager.oneSecond method so that it calls the oneSecond method for all registered implementation of the TimedItem interface." />
     <MESSAGE value="getSpeed now considers whether the route has a speed sign" />
     <MESSAGE value="unit tests for the Intersection package is done&#10;unit tests for the Route package midway done" />
-    <MESSAGE value="test" />
     <MESSAGE value="Finished test cases for all packages.&#10;&#10;Optimised Intersection.reduceIncomingSpeedSigns&#10;&#10;Fixed operation of the DemoSensor.oneSecond method which was looping back one 'second' too early." />
     <MESSAGE value="Created a master class which is able to call the test scripts for all packages&#10;Renamed some of the test classes so they are less ambiguous" />
     <MESSAGE value="Refactored the unit test names&#10;Added a test in GetConnectedIntersections which edits the returned copy of the unit variable and ensures that the unit variable is not edited.&#10;Added a test in ReduceIncomingSpeedSigns that ensures that routes with no speed signs remain unchanged.thrown&#10;Refactored the logic in getSensors to work properly for all 4 cases for which it can be called&#10;Added more unit tests in for the speed sign to more completely represent its usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored the unit test names&#10;Added a test in GetConnectedIntersections which edits the returned copy of the unit variable and ensures that the unit variable is not edited.&#10;Added a test in ReduceIncomingSpeedSigns that ensures that routes with no speed signs remain unchanged.thrown&#10;Refactored the logic in getSensors to work properly for all 4 cases for which it can be called&#10;Added more unit tests in for the speed sign to more completely represent its usage" />
+    <MESSAGE value="Testing the ability to remove files from being tracked by the svn repo but keeping a local copy." />
+    <MESSAGE value="test" />
+    <MESSAGE value="Removed 'illegal' files from intersection package." />
+    <MESSAGE value="removed other illegal files in remaining packages." />
+    <option name="LAST_COMMIT_MESSAGE" value="removed other illegal files in remaining packages." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2052" y="199" key="#Notifications" timestamp="1584935281969">
@@ -240,12 +297,17 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584442166134" />
-    <state x="1920" y="-419" width="608" height="1920" key="CommitChangelistDialog2" timestamp="1584935396044">
-      <screen x="1920" y="-419" width="1080" height="1920" />
+    <state x="756" y="424" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585018390614">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="756" y="424" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585018390614" />
+    <state x="839" y="0" width="608" height="1920" key="CommitChangelistDialog2" timestamp="1585018336947">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="238" key="CommitChangelistDialog2/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769523073" />
     <state x="0" y="134" key="CommitChangelistDialog2/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792747795" />
     <state x="1920" y="252" key="CommitChangelistDialog2/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584791518945" />
+    <state x="839" y="0" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585018336947" />
     <state x="1920" y="-419" width="608" height="1920" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1584935396044" />
     <state x="503" y="134" key="CommitChangelistDialog2/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584570556108" />
     <state x="0" y="238" width="1080" height="1587" key="CommitChangelistDialog2/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591175476" />
@@ -255,7 +317,7 @@
     <state x="2336" y="44" key="FileChooserDialogImpl/0.1080.1920.1080/1920.-456.1080.1920/0.0.1920.1080@1920.-456.1080.1920" timestamp="1584522759206" />
     <state x="740" y="281" key="FileChooserDialogImpl/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441863555" />
     <state x="416" y="500" key="FileChooserDialogImpl/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591188656" />
-    <state width="1037" height="919" key="GridCell.Tab.0.bottom" timestamp="1584929463152">
+    <state width="1877" height="481" key="GridCell.Tab.0.bottom" timestamp="1585017543064">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1037" height="919" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584929463152" />
@@ -263,9 +325,10 @@
     <state width="1037" height="549" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751478" />
     <state width="1037" height="698" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792838794" />
     <state width="1037" height="482" key="GridCell.Tab.0.bottom/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584836247383" />
+    <state width="1877" height="481" key="GridCell.Tab.0.bottom/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585017543064" />
     <state width="1877" height="195" key="GridCell.Tab.0.bottom/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.bottom/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321253" />
-    <state width="1037" height="919" key="GridCell.Tab.0.center" timestamp="1584929463151">
+    <state width="1877" height="481" key="GridCell.Tab.0.center" timestamp="1585017543064">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1037" height="919" key="GridCell.Tab.0.center/-1920.0.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584929463151" />
@@ -273,9 +336,10 @@
     <state width="1037" height="549" key="GridCell.Tab.0.center/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751477" />
     <state width="1037" height="698" key="GridCell.Tab.0.center/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792838794" />
     <state width="1037" height="482" key="GridCell.Tab.0.center/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584836247382" />
+    <state width="1877" height="481" key="GridCell.Tab.0.center/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585017543064" />
     <state width="1877" height="195" key="GridCell.Tab.0.center/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.center/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="919" key="GridCell.Tab.0.left" timestamp="1584929463150">
+    <state width="1877" height="481" key="GridCell.Tab.0.left" timestamp="1585017543064">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1037" height="919" key="GridCell.Tab.0.left/-1920.0.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584929463150" />
@@ -283,9 +347,10 @@
     <state width="1037" height="549" key="GridCell.Tab.0.left/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751477" />
     <state width="1037" height="698" key="GridCell.Tab.0.left/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792838794" />
     <state width="1037" height="482" key="GridCell.Tab.0.left/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584836247382" />
+    <state width="1877" height="481" key="GridCell.Tab.0.left/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585017543064" />
     <state width="1877" height="195" key="GridCell.Tab.0.left/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.left/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
-    <state width="1037" height="919" key="GridCell.Tab.0.right" timestamp="1584929463152">
+    <state width="1877" height="481" key="GridCell.Tab.0.right" timestamp="1585017543064">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1037" height="919" key="GridCell.Tab.0.right/-1920.0.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584929463152" />
@@ -293,6 +358,7 @@
     <state width="1037" height="549" key="GridCell.Tab.0.right/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584769751478" />
     <state width="1037" height="698" key="GridCell.Tab.0.right/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584792838794" />
     <state width="1037" height="482" key="GridCell.Tab.0.right/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584836247382" />
+    <state width="1877" height="481" key="GridCell.Tab.0.right/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585017543064" />
     <state width="1877" height="195" key="GridCell.Tab.0.right/0.1086.1920.1080/1920.-345.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1584441870205" />
     <state width="1037" height="386" key="GridCell.Tab.0.right/1080.11.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584591321252" />
     <state width="1037" height="698" key="GridCell.Tab.1.bottom" timestamp="1584792838795">
@@ -362,6 +428,10 @@
     <state x="2123" y="26" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1080/1920.-419.1080.1920/0.0.1920.1080@1920.-419.1080.1920" timestamp="1584838073541" />
     <state x="1283" y="459" width="672" height="678" key="search.everywhere.popup/-1920.357.1920.1080/1080.14.1080.1920/0.0.1080.1920@0.0.1080.1920" timestamp="1584765889184" />
     <state x="2123" y="459" width="672" height="678" key="search.everywhere.popup/-1920.357.1920.1080/1920.14.1080.1920/0.0.1920.1080@1920.14.1080.1920" timestamp="1584835928597" />
+    <state x="824" y="377" key="svn.propertyDialog" timestamp="1585017610930">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="824" y="377" key="svn.propertyDialog/0.1080.1920.1080/1920.-419.1080.1920/0.0.1920.1080@0.0.1920.1080" timestamp="1585017610930" />
     <state x="783" y="444" key="svn.upgradeDialog" timestamp="1584441865822">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
