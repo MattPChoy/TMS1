@@ -87,14 +87,13 @@ public class Intersection {
      * @throws IllegalStateException if a route already exists connecting this intersection and the given intersection
      * @throws IllegalArgumentException if the given default speed is negative.
      */
-    public void addConnection(Intersection from, int defaultSpeed) throws IllegalArgumentException,
-            IllegalStateException {
+    public void addConnection(Intersection from, int defaultSpeed) throws IllegalStateException {
         if (defaultSpeed < 0){
             // If the default speed is negative
             throw new IllegalArgumentException("The given default speed, '" + defaultSpeed + "' is negative");
         }
 
-        for (Route r: incomingRoutes){
+        for (Route r: incomingRoutes) {
             // Search all routes to see whether it already exists.
 
             String existingRouteID = r.getFrom().getId();

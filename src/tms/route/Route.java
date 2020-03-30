@@ -49,7 +49,7 @@ public class Route {
      * @param initialSpeed initial speed limit to be displayed on speed sign
      * @throws IllegalArgumentException if the given speed is negative
      */
-    public void addSpeedSign(int initialSpeed) throws IllegalArgumentException{
+    public void addSpeedSign(int initialSpeed){
         // Possibly instantiate a temporary instance and then pass it to the addSensor method?
 
         if (initialSpeed<0){
@@ -142,7 +142,7 @@ public class Route {
      * @throws IllegalStateException if the route has no electronic speed sign
      * @throws IllegalArgumentException if the speed given is negative
      */
-    public void setSpeedLimit(int newSpeed) throws IllegalArgumentException, IllegalStateException{
+    public void setSpeedLimit(int newSpeed){
         speedLimit = newSpeed;
 
         if (hasSpeedSign()){
@@ -177,6 +177,8 @@ public class Route {
             else throw new DuplicateSensorException();
         }
     }
+
+
 
 
     /**

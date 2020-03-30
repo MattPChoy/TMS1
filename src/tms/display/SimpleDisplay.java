@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * A class to create and display a version of your network.
  * <p>
- * This can be used to assist in the debugging and visualisation of your nfetwork
+ * This can be used to assist in the debugging and visualisation of your network
  * and will <strong>not</strong> be assessed.
  * <p>
  *  It is <em>highly recommended</em> you use this sparingly for visualisation purposes
@@ -32,9 +32,6 @@ public class SimpleDisplay {
 
         List<Intersection> testNetwork = new ArrayList<>();
 
-        testNetwork.add(new Intersection("0"));
-        System.out.println(testNetwork.get(0).toString());
-
 /* This code to create your network will not compile until you implement at
    least Intersection and Route. You will have to selectively uncomment parts
    of this code if you have only implemented part of the assignment. You may
@@ -45,22 +42,23 @@ public class SimpleDisplay {
    until you uncomment some of the code below. */
 
         // Add intersections to the test network.
-        testNetwork.add(new Intersection("0"));
-        testNetwork.add(new Intersection("1"));
-        testNetwork.add(new Intersection("2"));
+        testNetwork.add(new Intersection("0")); // B
+        testNetwork.add(new Intersection("1")); // C
+        testNetwork.add(new Intersection("2")); // D
 
         // Connect intersections together to create routes between intersections.
-        testNetwork.get(0).addConnection(testNetwork.get(2), 80);
-        testNetwork.get(0).addConnection(testNetwork.get(1), 80);
-        testNetwork.get(1).addConnection(testNetwork.get(2), 100);
-        testNetwork.get(1).addConnection(testNetwork.get(0), 90);
+        testNetwork.get(0).addConnection(testNetwork.get(2), 80); // Route from C to A
+        testNetwork.get(0).addConnection(testNetwork.get(1), 80); // Route from B to A
+        testNetwork.get(1).addConnection(testNetwork.get(2), 100); // Route from C to B
+        testNetwork.get(1).addConnection(testNetwork.get(0), 90); // Route from A to B
 
         // Add sensors and signals to routes in the test network.
         int[] speedCameraData = {89, 87, 22, 32, 88};
         try {
-            testNetwork.get(1).getConnection(testNetwork.get(0)).addSensor(
+            testNetwork.get(1).getConnection(testNetwork.get(0)).addSensor( // Add a SC on the route from A to B
                     new DemoSpeedCamera(speedCameraData, 90));
-            testNetwork.get(0).getConnection(testNetwork.get(2)).addSpeedSign(75);
+            testNetwork.get(0).getConnection(testNetwork.get(2)).addSpeedSign(75); // Add a speed sign on the
+                // route from C to A
         } catch (DuplicateSensorException | RouteNotFoundException e) {
             e.printStackTrace();
         }
@@ -76,7 +74,7 @@ public class SimpleDisplay {
      *     <li>intersection: [INTERSECTION_NAME]
      *     </li><li>[Route1 toString()]
      *     </li><li>...
-     *     </li><li>[Routen toString()]
+     *     </li><li>[Route2 toString()]
      *     </li>
      *     </ul>
      *     for each intersection
@@ -111,6 +109,7 @@ public class SimpleDisplay {
      * @given
      */
     public static void main(String[] args) {
+//        instantiateClasses();
         SimpleDisplay.display(instantiateClasses());
     }
 }
