@@ -19,6 +19,9 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+*.xml
+*.svn-base
+*.class
 [Bb]in
 [Dd]ebug*/
 *.lib
@@ -30,6 +33,13 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
-*.xml
-*.svn-base
-*.class
+/out/production/CSSE2002_Assignment1/tms/display/SimpleDisplay.class
+/out/production/CSSE2002_Assignment1/tms/intersection/Intersection.class
+/out/production/CSSE2002_Assignment1/tms/route/Route.class
+/out/production/CSSE2002_Assignment1/tms/route/TrafficSignal.class
+/out/production/CSSE2002_Assignment1/tms/sensors/DemoPressurePad.class
+/out/production/CSSE2002_Assignment1/tms/sensors/DemoSensor.class
+/out/production/CSSE2002_Assignment1/tms/sensors/DemoSpeedCamera.class
+/out/production/CSSE2002_Assignment1/tms/util/RouteNotFoundException.class
+/out/production/CSSE2002_Assignment1/tms/display/SimpleDisplay.class
+/out/production/CSSE2002_Assignment1/tms/display/SimpleDisplay.class

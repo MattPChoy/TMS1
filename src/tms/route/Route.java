@@ -10,33 +10,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/route/Route.html)
+ * From JavaDoc
+   https://csse2002.uqcloud.net/assignment/1/tms/route/Route.html
  * public class Route
  *
  * Represents a one-way connection between intersections
- * All routes have a string identifer (ID), an origin intersection, a default speed, a congestion calculator, up to one
-   of each type of sensor, and up to one of each type of signal (TrafficLight and SpeedSign).
- * Inherited methods from class Object: clone, finalize, getClass, notify, notifyAll, wait, wait, wait
+ * All routes have a string identifer (ID), an origin intersection, a default
+   speed, a congestion calculator, up to one of each type of sensor, and up
+   to one of each type of signal (TrafficLight and SpeedSign).
+ * Inherited methods from class Object: clone, finalize, getClass, notify,
+   notifyAll, wait, wait, wait
  */
 public class Route {
-
-    private String id;                  // The unique string identifier for this Route. Formatted as Route.FROM:Route.To
-    private int speedLimit;             // The speed limit of the route. Potentially overwritten by speedSign.getSpeed()
-    private Intersection from;          // The intersection from which this route originates from
-    private SpeedSign speedSign = null; // If speedSign == null then a speedSign does not exist for this route.
+    // unique string identifier for this Route. Formatted as Route.FROM:Route.To
+    private String id;
+    private int speedLimit;
+    private Intersection from; // Originating intersection for this route.
+    // if speedSign == null or trafficLight == null then one DNE for this route.
+    private SpeedSign speedSign = null;
     private TrafficLight trafficLight = null;
-    private List<Sensor> sensors = new ArrayList<>(){{
-        add(null); // Pressure Pad
-        add(null); // Speed Camera
+    private List<Sensor> sensors = new ArrayList<>() {{
+            add(null); // Pressure Pad placeholder.
+            add(null); // Speed Camera placeholder.
     }};
 
     /**
-     * Creates a new route with the given ID, origin intersection and default speed.
+     * Creates a new route with the given ID, origin intersection and default
+       speed.
      * @param defaultSpeed the default speed for the one-way route
      * @param from the intersection from which this route originates from
      * @param id the unique string identifier for this route
      */
-    public Route(String id, Intersection from, int defaultSpeed){
+    public Route(String id, Intersection from, int defaultSpeed) {
         this.id = id;
         this.from = from;
         this.speedLimit = defaultSpeed;
@@ -44,17 +49,16 @@ public class Route {
 
     /**
      * Creates and adds a new electronic speed sign to this route.
-     * If an electronic speed sign already exists on this route, it should be overwritten.
+     * If an electronic speed sign already exists on this route, it should be
+       overwritten.
      *
      * @param initialSpeed initial speed limit to be displayed on speed sign
      * @throws IllegalArgumentException if the given speed is negative
      */
-    public void addSpeedSign(int initialSpeed){
-        // Possibly instantiate a temporary instance and then pass it to the addSensor method?
+    public void addSpeedSign(int initialSpeed) {
 
-        if (initialSpeed<0){
-            // If the initialSpeed parameter passed is negative, throw an IllegalArgumentException
-            throw new IllegalArgumentException("The speed limit for this route is negative");
+        if (initialSpeed < 0) {
+            throw new IllegalArgumentException();
         }
         else {
             this.speedSign = new SpeedSign(initialSpeed);
@@ -65,44 +69,47 @@ public class Route {
     /**
      * Adds a TrafficLight signal to the route. It should default to RED.
      */
-    public void addTrafficLight(){
-        this.trafficLight = new TrafficLight(); // The TrafficSignal's value is set in the TrafficLight constructor.
+    public void addTrafficLight() {
+        // The TrafficSignal's value is set in the TrafficLight constructor.
+        this.trafficLight = new TrafficLight();
     }
 
     /**
      * Returns the intersection at which this route begins.
      * @return the intersection from which this route originates
      */
-    public Intersection getFrom(){
+    public Intersection getFrom() {
         return from;
     }
 
     /**
      * Returns a new list containing all the sensors on this route.
-     * Adding/removing sensors from this list should not affect the route's internal list of sensors.
+     * Adding/removing sensors from this list should not affect the route's
+       internal list of sensors.
      *
      * @return list of all sensors on this route
      */
-    public List<Sensor> getSensors(){
-        List<Sensor> sensorsToReturn = new ArrayList<>();
+    public List<Sensor> getSensors() {
+        List<Sensor> formattedSensors = new ArrayList<>();
 
-        for (Sensor sensorObject: sensors){
-            if (!(sensorObject == null)){
-                sensorsToReturn.add(sensorObject);
+        for (Sensor sensorObject : sensors) {
+            if (sensorObject != null){
+                formattedSensors.add(sensorObject);
             }
         }
 
-        return sensorsToReturn;
+        return formattedSensors;
     }
 
     /**
      * Returns the currently active speed limit for vehicles on this route.
-     * If an electronic speed sign is present, return its displayed speed. Otherwise, return the default speed limit
-       of the route.
+     * If an electronic speed sign is present, return its displayed speed.
+       Otherwise, return the default speed limit of the route. (int
+     defaultSpeed)
      * @return the current speed limit of this route
      */
-    public int getSpeed(){
-        if (hasSpeedSign()){
+    public int getSpeed() {
+        if (hasSpeedSign()) {
             return speedSign.getCurrentSpeed();
         }
         return speedLimit;
@@ -112,42 +119,46 @@ public class Route {
      * Returns the traffic light signal on the route, or null if none exists
      * @return the TrafficLight instance deployed on the route
      */
-    public TrafficLight getTrafficLight(){
-        return trafficLight; // Using new TrafficLight as a placeholder.
+    public TrafficLight getTrafficLight() {
+        return this.trafficLight;
     }
 
     /**
      * Returns true if this route has an electronic speed sign; false otherwise.
      * @return whether an electronic speed sign is present on this route
      */
-    public boolean hasSpeedSign(){
+    public boolean hasSpeedSign() {
+        // If speedSign == null then this route does not contain a speed sign
         return this.speedSign != null;
     }
 
     /**
-     * Sets the traffic signal if there is a traffic light controlling traffic flow on this route.
+     * Sets the traffic signal if there is a traffic light controlling traffic
+       flow on this route.
      * If there is no traffic light for this route, no action should be taken.
 
      * @param signal the traffic light signal to set
      */
-    public void setSignal(TrafficSignal signal){
-        this.trafficLight.setSignal(signal);
+    public void setSignal(TrafficSignal signal) {
+        if (trafficLight != null) {
+            this.trafficLight.setSignal(signal);
+        }
     }
 
     /**
      * Sets the speed limit of this route to the given value.
-     * This method will only change the speed displayed on electronic speed signs. If this route doesn't have a
-       SpeedSign, throw an exception and take no action.
+     * This method will only change the speed displayed on electronic speed
+       signs. If this route doesn't have a SpeedSign, throw an exception and
+       take no action.
      * @param newSpeed the new speed to be displayed on the speed sign
      * @throws IllegalStateException if the route has no electronic speed sign
      * @throws IllegalArgumentException if the speed given is negative
      */
-    public void setSpeedLimit(int newSpeed){
+    public void setSpeedLimit(int newSpeed) {
         speedLimit = newSpeed;
 
-        if (hasSpeedSign()){
-            // update the speed on the road
-            if (speedLimit < 0){
+        if (hasSpeedSign()) {
+            if (speedLimit < 0) { // update the speed on the road
                 // Speed limit is negative
                 throw new IllegalArgumentException("");
             }
@@ -159,72 +170,78 @@ public class Route {
     }
 
     /**
-     * Adds a sensor to the route if a sensor of the same type is not already on the route.
+     * Adds a sensor to the route if a sensor of the same type is not already on
+       the route.
      * @param sensor the sensor to be added to the route
-     * @throws  DuplicateSensorException if the sensor to add is of the same type as the sensor deployed on this route
+     * @throws  DuplicateSensorException if the sensor to add is of the same
+       type as the sensor deployed on this route
      */
-    public void addSensor(Sensor sensor) throws DuplicateSensorException{
-        if (sensor instanceof DemoPressurePad){
+    public void addSensor(Sensor sensor) throws DuplicateSensorException {
+        if (sensor instanceof DemoPressurePad) {
             if (sensors.get(0) == null){
                 sensors.set(0, sensor);
             }
             else throw new DuplicateSensorException();
         }
-        else if (sensor instanceof DemoSpeedCamera){
-            if (sensors.get(1) == null){
+        else if (sensor instanceof DemoSpeedCamera) {
+            if (sensors.get(1) == null) {
                 sensors.set(1, sensor);
             }
             else throw new DuplicateSensorException();
         }
     }
 
-
-
-
     /**
      * Returns the string representation of this route.
-     * The format of the string to return is "id:defaultSpeed:numberOfSensors", where 'id' is our identifier string,
+     * The format of the string to return is "id:defaultSpeed:numberOfSensors",
+       where 'id' is our identifier string,
        'defaultSpeed' is the default speed of this route, and
-       'numberOfSensors' is the number of sensors of all types currently on this route.
-     *
-     * If this route has a SpeedSign, then the format to be returned should instead be
-       "id:defaultSpeed:numberOfSensors:speedSignSpeed" where
+       'numberOfSensors' is the number of sensors of all types currently on
+       this route.
+
+     * If this route has a SpeedSign, then the format to be returned should
+       instead be "id:defaultSpeed:numberOfSensors:speedSignSpeed" where
        'speedSignSpeed' is the current speed limit indicated on the speed sign.
+
+     * If this route has any sensors, the format to be returned should be the
+       same as above, with an additional line for information pertaining to
+       each sensor on the route. The order in which these lines appear should
+       be alphabetical, meaning a line for a pressure plate (PP) should come
+       before a line for a speed camera (SC).
      *
-     * If this route has any sensors, the format to be returned should be the same as above, with an additional line for
-       information pertaining to each sensor on the route. The order in which these lines appear should be alphabetical,
-       meaning a line for a pressure plate (PP) should come before a line for a speed camera (SC).
-     *
-     * Each sensor line should contain that sensor's string representation as returned by its specific toString method,
+     * Each sensor line should contain that sensor's string representation as
+       returned by its specific toString method,
        e.g. DemoPressurePad.toString().
-     *
+
      * Note: System.lineSeparator() should be used to separate lines.
-     *
      * @return the formatted string representation of the object.
      */
     @Override
-    public String toString(){
+    public String toString() {
         int numberOfSensors = 0;
         if (sensors.get(0) != null) numberOfSensors++;
         if (sensors.get(1) != null) numberOfSensors++;
 
-        StringBuilder stringRepresentation = new StringBuilder(id + ":" + speedLimit + ":" + numberOfSensors);
+        StringBuilder output = new StringBuilder(id + ":"
+                + speedLimit + ":" + numberOfSensors);
 
         if (this.hasSpeedSign()){
-            stringRepresentation.append(":").append(this.getSpeed());
+            output.append(":").append(this.getSpeed());
         }
 
         if (sensors.get(0) != null){
-            if (sensors.get(0).getClass().toString().equals(DemoPressurePad.class.toString())){
-                stringRepresentation.append(System.lineSeparator()).append(sensors.get(0).toString());
+            if (sensors.get(0) instanceof DemoPressurePad){
+                output.append(System.lineSeparator()).append(
+                        sensors.get(0).toString());
             }
         }
         if (sensors.get(1) != null) {
-            if (sensors.get(1).getClass().toString().equals(DemoSpeedCamera.class.toString())) {
-                stringRepresentation.append(System.lineSeparator()).append(sensors.get(1).toString());
+            if (sensors.get(1) instanceof DemoSpeedCamera) {
+                output.append(System.lineSeparator()).append(
+                        sensors.get(1).toString());
             }
         }
 
-        return stringRepresentation.toString();
+        return output.toString();
     }
 }

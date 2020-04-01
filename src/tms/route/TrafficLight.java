@@ -1,22 +1,24 @@
 package tms.route;
 
 /**
- * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/route/TrafficLight.html)
+ * From JavaDoc
+ * https://csse2002.uqcloud.net/assignment/1/tms/route/TrafficLight.html
  * public class TrafficLight extends object
  *
- * Represents a traffic light signal on a route, indicating whether vehicles can proceed past the route's destination
+ * Represents a traffic light signal on a route, indicating whether vehicles can
+   proceed past the route's destination
    intersection.
  *
- * Inherited methods from class Object: clone, equals, finalize, getClass, hashCode, notify, notifyAll,
-       toString, wait, wait, wait
+ * Inherited methods from class Object: clone, equals, finalize, getClass,
+   hashCode, notify, notifyAll, toString, wait, wait, wait
  */
-public class TrafficLight{
-    private TrafficSignal trafficSignal;
+public class TrafficLight {
+    private TrafficSignal trafficSignal; // The signal of this TrafficLight.
 
     /**
      * Creates a traffic light with an initial color of TrafficSignal.RED
      */
-    public TrafficLight(){
+    public TrafficLight() {
            setSignal(TrafficSignal.RED); // Initialise the traffic light as red.
     }
 
@@ -30,8 +32,9 @@ public class TrafficLight{
 
     /**
      * Sets the displayed traffic light signal to a new value
-     * Note: this method has no logic and as such will allow changing a red light to green immediately.
-     *
+     * Note: this method has no logic and as such will allow changing a red
+       light to green immediately.
+
      * @param signal the new traffic light signal
      */
     public void setSignal(TrafficSignal signal){

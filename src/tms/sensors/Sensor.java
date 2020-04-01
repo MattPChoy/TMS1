@@ -1,10 +1,12 @@
 package tms.sensors;
 
 /**
- * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/sensors/Sensor.html)
+ * From JavaDoc
+   https://csse2002.uqcloud.net/assignment/1/tms/sensors/Sensor.html
  * public interface Sensor
  *
- * A device used to detect congestion by comparing observed traffic flow measures to a predefined threshold value.
+ * A device used to detect congestion by comparing observed traffic flow
+   measures to a predefined threshold value.
  * This interface will need to be extendable.
  */
 public interface Sensor {
@@ -17,7 +19,8 @@ public interface Sensor {
     int getCongestion();
 
     /**
-     * Returns the level below/above which observed data indicates congestion is occurring on a route
+     * Returns the level below/above which observed data indicates congestion is
+       occurring on a route
      * The exact meaning of the threshold differs per sensor implementation
      * @return the threshold value
      */

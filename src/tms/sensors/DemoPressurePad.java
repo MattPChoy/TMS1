@@ -55,13 +55,17 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
 
         int congestion = (int) ((count/threshold)*(float) 100);
 
-        // This is equivalent to saying CONGESTION_LOWER_BOUND <= congestion <= CONGESTION_UPPER_BOUND;
-        // Just a way of ensuring that the congestion is between 0 and 100 (inclusive).
-        return Math.max(CONGESTION_LOWER_BOUND, Math.min(congestion, CONGESTION_UPPER_BOUND));
+        // Using Math.max() and Math.min() is the same as bounding the value of
+        // congestion between 0 and 100 inclusive. NOTE that the values of
+        // CONGESTION_LOWER_BOUND and CONGESTION_UPPER_BOUND are set in the
+        // DemoSensor class as it is also used in the DemoPressurePad class.
+        return Math.max(CONGESTION_LOWER_BOUND,
+                Math.min(congestion, CONGESTION_UPPER_BOUND));
     }
 
     /**
-     * Returns the level below/above which observed data indicates congestion is occurring on a route
+     * Returns the level below/above which observed data indicates congestion is
+       occurring on a route
      * The exact meaning of the threshold differs per sensor implementation
      *
      * @return the threshold value
