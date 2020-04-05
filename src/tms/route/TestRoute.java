@@ -215,6 +215,12 @@ public class TestRoute {
         Assert.assertEquals(TrafficSignal.RED, r.getTrafficLight().getSignal());
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void addSpeedSign_testNegativeNumberThrowsIllegalArgumentException(){
+        Route r = new Route("routeId", new Intersection("A"), 40);
+        r.addSpeedSign(-10);
+    }
+
     @Test
     public void addSpeedSign_testOverwritingObjects(){
         Route r = new Route("routeId", new Intersection("A"), 40);

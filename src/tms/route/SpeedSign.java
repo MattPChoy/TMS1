@@ -13,10 +13,11 @@ public class SpeedSign {
     private int displaySpeed;
 
     /**
-     * Creates a new electronic speed sign with the initial displayed speed
+     * Creates a new electronic speed sign with the initial displayed speed.
+     * (No verification required).
      * @param initialSpeed the intial speed to be shown on the sign
      */
-    public SpeedSign(int initialSpeed){
+    public SpeedSign(int initialSpeed) {
         this.displaySpeed = initialSpeed;
     }
 
@@ -24,15 +25,15 @@ public class SpeedSign {
      * Get the speed displayed by the sign (not the speed of the cars on the route
      * @return the current speed limit displayed by the sign
      */
-    public int getCurrentSpeed(){
+    public int getCurrentSpeed() {
         return displaySpeed;
     }
 
     /**
-     * Sets the speed limit displayed.
+     * Sets the speed limit displayed. (No verification required).
      * @param speed the new speed limit to display.
      * */
-    public void setCurrentSpeed(int speed){
+    public void setCurrentSpeed(int speed) {
         this.displaySpeed = speed;
     }
 }

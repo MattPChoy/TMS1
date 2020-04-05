@@ -1,4 +1,7 @@
 package tms.sensors;
+
+import tms.util.TimedItemManager;
+
 /**
  * From JavaDoc
  * https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoSpeedCamera.html
@@ -39,7 +42,7 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
         float average = (float) averageSpeed();
         float threshold = (float) getThreshold();
 
-        int congestion = (int) ((average/threshold)*((float) 100));
+        int congestion = (int) ((average / threshold) * ((float) 100));
 
         // Using Math.max() and Math.min() is the same as bounding the value of
         // congestion between 0 and 100 inclusive. NOTE that the values of

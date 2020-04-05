@@ -1,5 +1,7 @@
 package tms.sensors;
 
+import tms.util.TimedItemManager;
+
 /**
  * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoPressurePad.html)
  * public class DemoPressurePad extends DemoSensor implements PressurePad
@@ -25,6 +27,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
      */
     public DemoPressurePad(int[] data, int threshold) {
         super(data, threshold); // DemoSensor constructor stores values in super.data, super.threshold.
+
     }
 
     /**
@@ -53,7 +56,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
         float count = (float) countTraffic();
         float threshold = (float) getThreshold();
 
-        int congestion = (int) ((count/threshold)*(float) 100);
+        int congestion = (int) ((count/threshold) * 100.0);
 
         // Using Math.max() and Math.min() is the same as bounding the value of
         // congestion between 0 and 100 inclusive. NOTE that the values of

@@ -6,17 +6,19 @@ import tms.util.TimedItemManager;
 import java.util.Arrays;
 
 /**
- * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoSensor.html)
+ * From JavaDoc
+ * https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoSensor.html
  * public abstract class DemoSensor extends Object implements TimedItem
- *
- * An abstract class to represent the shared functionality of the demo sensor types
- *
- * Inherited methods from interface TimedItem: oneSecond,
+
+ * An abstract class to represent the shared functionality of the demo sensor
+   types
+
+ * Inherited methods from interface TimedItem: oneSecond
  */
-public abstract class DemoSensor implements TimedItem{
+public abstract class DemoSensor implements TimedItem {
     private int threshold;
     private int[] data;
-    private int timeUnits = 0;
+    private int seconds = 0;
 
     // The lowest value a sensor's congestion value can be.
     protected int CONGESTION_LOWER_BOUND = 0;
@@ -26,15 +28,18 @@ public abstract class DemoSensor implements TimedItem{
 
     /**
      * Creates a new sensor, using the given list of data values and threshold.
-     * The initial value returned by getCurrentValue() should be the first element of the given data array.
-     *
-     * The sensor should be registered as a timed item, see TimedItemManager.registerTimedItem(TimedItem).
-     *
+     * The initial value returned by getCurrentValue() should be the first
+       element of the given data array.
+
+     * The sensor should be registered as a timed item, see
+       TimedItemManager.registerTimedItem(TimedItem).
+
      * @param data a non-empty array of data values
-     * @param threshold a threshold value that indicated what value is high congestion
+     * @param threshold a threshold value that indicated what value is high
+     *                  congestion
      * @requires data.length > 0
      */
-    protected DemoSensor(int[] data, int threshold){
+    protected DemoSensor(int[] data, int threshold) {
         TimedItemManager.getTimedItemManager().registerTimedItem(this);
         this.data = data;
         this.threshold = threshold;
@@ -45,43 +50,48 @@ public abstract class DemoSensor implements TimedItem{
      * Returns the current data value as measured by the sensor.
      * @return the current data value
      */
-    protected int getCurrentValue(){
-        return data[timeUnits];
+    protected int getCurrentValue() {
+        return data[seconds];
     }
 
     /**
      * Returns the threshold data value. Specified by interface Sensor
      * @return the threshold
      */
-    public int getThreshold(){
+    public int getThreshold() {
         return threshold;
     }
 
     /**
-     * This method will be called by TimedItemManager once every second, provided the model is not in a paused state.
-     * Sets the current data value returned by getCurrentValue() to be the next value in the data array passed to the
-       constructor.
-     * If the end of the data array is reached, it should wrap around to the start of the array and continue in the same
+     * This method will be called by TimedItemManager once every second,
+       provided the model is not in a paused state.
+     * Sets the current data value returned by getCurrentValue() to be the next
+       value in the data array passed to the constructor.
+     * If the end of the data array is reached, it should wrap around to the
+       start of the array and continue in the same
        order.
      */
     @Override
     public void oneSecond() {
-        timeUnits++;
+        seconds++;
 
-        if (timeUnits >= data.length){
-            timeUnits=0;
+        if (seconds >= data.length){
+            seconds = 0;
         }
     }
 
      /**
       * Returns the string representation of this sensor.
-      * @return threshold:list,of,data,values where 'threshold' is this sensor's threshold and 'list,of,data,values' is
-        this sensor's data array.
+      * @return threshold:list,of,data,values where 'threshold' is this sensor's
+        threshold and 'list,of,data,values' is this sensor's data array.
       */
      @Override
-     public String toString(){
-         String unpackedData = Arrays.toString(data).substring(1, Arrays.toString(data).length()-1)
-                 .replace(" ", "");
+     public String toString() {
+         String unpackedData = Arrays.toString(data).substring(1,
+                 Arrays.toString(data).length() - 1);
+         // Remove the spaces between the data list:
+         // E.g. from 1, 2, 3, 4 to 1,2,3,4.
+         unpackedData = unpackedData.replaceAll(" ", "");
          return (threshold + ":" + unpackedData);
      }
 }

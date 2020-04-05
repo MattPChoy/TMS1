@@ -6,8 +6,7 @@ import tms.sensors.DemoSpeedCamera;
 import tms.sensors.Sensor;
 import tms.util.DuplicateSensorException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * From JavaDoc
@@ -54,10 +53,12 @@ public class Route {
      *
      * @param initialSpeed initial speed limit to be displayed on speed sign
      * @throws IllegalArgumentException if the given speed is negative
+
+     * @requires initialSpeed <= 0
+     * @ensures this.speedSign is set to the respective new speedSign object.
      */
     public void addSpeedSign(int initialSpeed) {
-
-        if (initialSpeed < 0) {
+        if (initialSpeed <= 0) {
             throw new IllegalArgumentException();
         }
         else {
@@ -93,7 +94,14 @@ public class Route {
         List<Sensor> formattedSensors = new ArrayList<>();
 
         for (Sensor sensorObject : sensors) {
-            if (sensorObject != null){
+            if (sensorObject != null) {
+                // Essentially removing all null objects from the sensors array.
+                // Null is added as a placeholder so that when returning the
+                // list of sensors, they will always be in order: see addSensors
+
+                // Additionally, this method inherently creates a new list obj,
+                // so that the original sensors list cannot be edited outside of
+                // this class.
                 formattedSensors.add(sensorObject);
             }
         }
@@ -143,6 +151,9 @@ public class Route {
         if (trafficLight != null) {
             this.trafficLight.setSignal(signal);
         }
+        // else do nothing
+        // need to check if trafficLight is null, as running null.setSignal
+        // will throw an exception.
     }
 
     /**
@@ -158,15 +169,16 @@ public class Route {
         speedLimit = newSpeed;
 
         if (hasSpeedSign()) {
-            if (speedLimit < 0) { // update the speed on the road
+            if (speedLimit < 0) {
                 // Speed limit is negative
-                throw new IllegalArgumentException("");
+                throw new IllegalArgumentException();
             }
 
-            // Else, set the speed limit;
+            // else is not required as the if statement terminates with an
+            // IllegalArgumentException
             this.speedSign.setCurrentSpeed(newSpeed);
         }
-        else throw new IllegalStateException("");
+        else throw new IllegalStateException();
     }
 
     /**
@@ -178,7 +190,7 @@ public class Route {
      */
     public void addSensor(Sensor sensor) throws DuplicateSensorException {
         if (sensor instanceof DemoPressurePad) {
-            if (sensors.get(0) == null){
+            if (sensors.get(0) == null) {
                 sensors.set(0, sensor);
             }
             else throw new DuplicateSensorException();
@@ -225,12 +237,12 @@ public class Route {
         StringBuilder output = new StringBuilder(id + ":"
                 + speedLimit + ":" + numberOfSensors);
 
-        if (this.hasSpeedSign()){
+        if (this.hasSpeedSign()) {
             output.append(":").append(this.getSpeed());
         }
 
-        if (sensors.get(0) != null){
-            if (sensors.get(0) instanceof DemoPressurePad){
+        if (sensors.get(0) != null) {
+            if (sensors.get(0) instanceof DemoPressurePad) {
                 output.append(System.lineSeparator()).append(
                         sensors.get(0).toString());
             }

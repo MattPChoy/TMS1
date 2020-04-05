@@ -31,7 +31,7 @@ public class RouteNotFoundException extends Exception {
 
      * @param message detail message of the exception
      */
-    public RouteNotFoundException(String message){
+    public RouteNotFoundException(String message) {
         super(message);
     }
 
@@ -52,7 +52,7 @@ public class RouteNotFoundException extends Exception {
      * @param message detail message of the exception
      * @param err cause of the exception
      */
-    public RouteNotFoundException(String message, Throwable err){
+    public RouteNotFoundException(String message, Throwable err) {
         super(message, err);
     }
 }

@@ -19,14 +19,14 @@ public class TrafficLight {
      * Creates a traffic light with an initial color of TrafficSignal.RED
      */
     public TrafficLight() {
-           setSignal(TrafficSignal.RED); // Initialise the traffic light as red.
+        setSignal(TrafficSignal.RED); // Initialise the traffic light as red.
     }
 
     /**
      * Get the traffic light signal currently displayed by the light
      * @return the displayed traffic light signal
      */
-    public TrafficSignal getSignal(){
+    public TrafficSignal getSignal() {
         return trafficSignal;
     }
 
@@ -37,7 +37,7 @@ public class TrafficLight {
 
      * @param signal the new traffic light signal
      */
-    public void setSignal(TrafficSignal signal){
+    public void setSignal(TrafficSignal signal) {
         this.trafficSignal = signal;
     }
 }

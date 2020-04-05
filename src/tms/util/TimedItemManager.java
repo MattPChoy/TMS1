@@ -23,12 +23,16 @@ public class TimedItemManager implements TimedItem {
     private ArrayList<TimedItem> toCall = new ArrayList<>();
     private static TimedItemManager instance = null;
 
+    private TimedItemManager(){
+
+    }
+
     /**
      * Gets a singleton instance of the TimedItemManager and makes one if
        required.
      */
-    public static TimedItemManager getTimedItemManager(){
-        if (instance == null){ // Check if an instance exists.
+    public static TimedItemManager getTimedItemManager() {
+        if (instance == null) { // Check if an instance exists.
             instance = new TimedItemManager(); // Instance DNE, create one.
         }
         return instance; // return the instance.
@@ -39,7 +43,7 @@ public class TimedItemManager implements TimedItem {
        oneSecond().
      * @param timedItem a TimedItem to register with the manager
      */
-    public void registerTimedItem(TimedItem timedItem){
+    public void registerTimedItem(TimedItem timedItem) {
         toCall.add(timedItem);
     }
 
@@ -51,7 +55,7 @@ public class TimedItemManager implements TimedItem {
      */
     @Override
     public void oneSecond() {
-        for (TimedItem t: toCall){
+        for (TimedItem t: toCall) {
             // Call the oneSecond method for all registered timedItems.
             t.oneSecond();
         }
