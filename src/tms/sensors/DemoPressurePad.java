@@ -68,7 +68,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
     public int getCongestion() {
         float count = (float) countTraffic();
         float threshold = (float) getThreshold();
-        int congestion = (int) ((count/threshold) * 100.0);
+        int congestion = (int) ((count/threshold) * (float) 100);
 
         // Using Math.max() and Math.min() is the same as bounding the value of
         // congestion between 0 and 100 inclusive. NOTE that the values of
@@ -92,6 +92,7 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
 
     /***
      * Returns the string representation of this sensor.
+     *
      * @return the string representation of the DemoPressurePad class instance.
      */
     @Override

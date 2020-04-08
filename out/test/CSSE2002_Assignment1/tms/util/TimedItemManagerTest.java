@@ -45,6 +45,8 @@ public class TimedItemManagerTest {
         assertEquals(4, sc1.averageSpeed());
         assertEquals(13, sc2.averageSpeed());
 
+        // test that it wraps around
+
         t.oneSecond();
 
         assertEquals(1, sc1.averageSpeed());

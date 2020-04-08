@@ -20,7 +20,6 @@ import java.util.List;
  * @given
  */
 public class SimpleDisplay {
-
     /**
      * Creates a network of intersections that have routes between each other.
      * @return list of intersections storing the demo network that is created
@@ -32,14 +31,14 @@ public class SimpleDisplay {
 
         List<Intersection> testNetwork = new ArrayList<>();
 
-/* This code to create your network will not compile until you implement at
-   least Intersection and Route. You will have to selectively uncomment parts
-   of this code if you have only implemented part of the assignment. You may
-   add more complexity to your network if you wish.
+        /* This code to create your network will not compile until you implement at
+           least Intersection and Route. You will have to selectively uncomment parts
+           of this code if you have only implemented part of the assignment. You may
+           add more complexity to your network if you wish.
 
-   Consequently, because at the moment nothing is added to testNetwork,
-   nothing will be displayed if you attempt to run main in this class,
-   until you uncomment some of the code below. */
+           Consequently, because at the moment nothing is added to testNetwork,
+           nothing will be displayed if you attempt to run main in this class,
+           until you uncomment some of the code below. */
 
         // Add intersections to the test network.
         testNetwork.add(new Intersection("0")); // B

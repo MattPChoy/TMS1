@@ -33,6 +33,7 @@ public class Route {
      * Creates a new route with the given ID, origin intersection and default
        speed.
      * Note: id not necessarily unique (no uniqueness checks required).
+     *
      * @param defaultSpeed the default speed for the one-way route
      * @param from the intersection from which this route originates from
      * @param id the unique string identifier for this route
@@ -74,6 +75,7 @@ public class Route {
 
     /**
      * Returns the intersection at which this route begins.
+     *
      * @return the intersection from which this route originates
      */
     public Intersection getFrom() {
@@ -97,6 +99,7 @@ public class Route {
      * If an electronic speed sign is present, return its displayed speed.
        Otherwise, return the default speed limit of the route. (int
      defaultSpeed)
+     *
      * @return the current speed limit of this route
      */
     public int getSpeed() {
@@ -108,6 +111,7 @@ public class Route {
 
     /**
      * Returns the traffic light signal on the route, or null if none exists
+     *
      * @return the TrafficLight instance deployed on the route
      */
     public TrafficLight getTrafficLight() {
@@ -116,10 +120,12 @@ public class Route {
 
     /**
      * Returns true if this route has an electronic speed sign; false otherwise.
+     *
      * @return whether an electronic speed sign is present on this route
      */
     public boolean hasSpeedSign() {
         // If speedSign == null then this route does not contain a speed sign
+        // Marginally more economical than creating a boolean variable.
         return this.speedSign != null;
     }
 
@@ -127,7 +133,7 @@ public class Route {
      * Sets the traffic signal if there is a traffic light controlling traffic
        flow on this route.
      * If there is no traffic light for this route, no action should be taken.
-
+     *
      * @param signal the traffic light signal to set
      */
     public void setSignal(TrafficSignal signal) {
@@ -192,17 +198,17 @@ public class Route {
      * If this route has a SpeedSign, then the format to be returned should
        instead be "id:defaultSpeed:numberOfSensors:speedSignSpeed" where
        'speedSignSpeed' is the current speed limit indicated on the speed sign.
-
+     *
      * If this route has any sensors, the format to be returned should be the
        same as above, with an additional line for information pertaining to
        each sensor on the route. The order in which these lines appear should
        be alphabetical, meaning a line for a pressure plate (PP) should come
        before a line for a speed camera (SC).
-
+     *
      * Each sensor line should contain that sensor's string representation as
        returned by its specific toString method,
        e.g. DemoPressurePad.toString().
-
+     *
      * Note: System.lineSeparator() should be used to separate lines.
      * @return the formatted string representation of the object.
      */

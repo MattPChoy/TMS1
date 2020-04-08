@@ -8,11 +8,11 @@ import java.util.*;
  * From JavaDoc
  * https://csse2002.uqcloud.net/assignment/1/tms/intersection/Intersection.html
  * public class Intersection extends Object
-
+ *
  * Represents a point at which routes can originate and terminate
  * All intersections have a unique identifier (ID), a list of incoming
    connections and, optionally, a set of traffic lights.
-
+ *
  * Inherited methods from class Object: clone, finalize, getClass, notify,
    notifyAll, wait, wait, wait
  */
@@ -24,6 +24,8 @@ public class Intersection {
     // A list of intersections which are the origin of routes terminating at
     // 'this' intersection.
     List<Intersection> incomingIntersections = new ArrayList<>();
+    private final int REDUCTION = 10; // To avoid magic numbers @898
+    private final int CUTOFF = 50;
 
 
     /**
@@ -41,6 +43,7 @@ public class Intersection {
 
     /**
      * Returns the ID of this intersection
+     *
      * @return unique string identifier (id) for this instance of intersection.
      */
     public String getId() {
@@ -51,8 +54,8 @@ public class Intersection {
      * Returns a new list containing all the incoming connections to this
        intersection.
      * Adding/removing routes from this list should not affect the
-       intersection's internal list of connecting
-     routes.
+       intersection's internal list of connecting routes.
+     *
      * @return a list of routes;
      */
     public List<Route> getConnections() {
@@ -65,7 +68,7 @@ public class Intersection {
      * Gets a list containing all intersections that have incoming routes to
        this intersection.
      * If no such intersection exists, return an empty list.
-
+     *
      * @return a list of all intersections that feed a route that ends at this
        intersection.
      */
@@ -83,24 +86,24 @@ public class Intersection {
        intersection. The new route should have a default speed given by
        'defaultSpeed', however if this value is negative, then an exception
        should be thrown and no new connection should be added.
-
+     *
      * If this intersection has an IntersectionLights a new traffic light signal
        should be added to the new route.
-
+     *
      * If there is already a connection from 'from', then instead of creating a
        new connection, an IllegalStateException should be thrown and the
        method should do nothing.
-
+     *
      * Note: On Piazza (@124): Do not need to check if a route has been created
        circularly (back to itself)
-
+     *
      * @param from the intersection the connection is from
      * @param defaultSpeed the connecting route's default speed.
-
+     *
      * @throws IllegalStateException if a route already exists connecting this
        intersection and the given intersection
      * @throws IllegalArgumentException if the given default speed is negative.
-
+     *
      * @requires (defaultSpeed>=0) && (!\exists Intersection from s.t. from
      * in incomingRoutes).
      * @ensures (\exists Route newRoute such that newRoute in incomingRoutes).
@@ -121,15 +124,15 @@ public class Intersection {
 
             if (existingRouteID.equals(newRouteID)) {
                 // Note that the objects can't be compared as we are
-                // instantiating
+                // instantiating a new route.
                 throw new IllegalStateException();
             }
         }
 
         // NOTE: A connection route goes from the intersection named
         // 'from' to 'this' intersection, and has the id from:this
-        String RouteID = from.getId() + ":" + this.getId();
-        Route newRoute = new Route(RouteID, from, defaultSpeed);
+        String newRouteID = from.getId() + ":" + this.getId();
+        Route newRoute = new Route(newRouteID, from, defaultSpeed);
         incomingRoutes.add(newRoute); // List for getConnections()
         incomingIntersections.add(from); // For getIncomingIntersections()
     }
@@ -139,9 +142,9 @@ public class Intersection {
      * All incoming routes with an electronic speed sign should have their speed
        limit changed to be the greater of 50 and the current displayed speed
        minus 10.
-
+     *
      * Routes without an electronic speed sign should not be affected.
-
+     *
      * No speed limits should be increased as a result of calling this
        method, ie. routes with a speed limit of 50 or below should not be
        affected.
@@ -150,11 +153,11 @@ public class Intersection {
         for (Route r : incomingRoutes) {
             if (r.hasSpeedSign()) {
                 int speedLimit = r.getSpeed();
-                if (speedLimit > 50) {
+                if (speedLimit > CUTOFF) {
                     // The Math.max method chooses the largest integer out of
                     // the two parameters. If speedLimit-10 is less than 50,
                     // then the speed will remain as 50.
-                    r.setSpeedLimit(Math.max(speedLimit - 10, 50));
+                    r.setSpeedLimit(Math.max(speedLimit - REDUCTION, CUTOFF));
                 }
                 // else, speed limits <= 50 remain unaffected.
             }
@@ -164,16 +167,17 @@ public class Intersection {
     /**
      * Given an origin intersection, returns the route that connects it to this
        destination intersection.
-
+     *
      * @param from an intersection that is connected to this intersection
      * @return the route that goes from 'from' to this intersection
      * @throws tms.util.RouteNotFoundException if no route exists from the given
        intersection to this intersection
-
+     *
      * @requires \exists Intersection from s.t. from in incomingRoutes
        @ensures from is returned by the method
      */
-    public Route getConnection(Intersection from) throws RouteNotFoundException {
+    public Route getConnection(Intersection from)
+            throws RouteNotFoundException {
         // the getConnection method creates a connection between the
         // intersection "from" and this route.
         // Intersection A (from) --ROUTE A:B--> Intersection B (this)
@@ -195,11 +199,11 @@ public class Intersection {
      * Returns the string representation of this intersection.
      * The format of the string to return is simply "id" where 'id' is this
        intersection's identifier string.
-
+     *
      * For example, an intersection with the an ID of "ABC" and traffic lights
        with a string representation of "3:X,Y,Z"  would have a toString()
        value of "ABC:3:X,Y,Z".
-
+     *
      * @return string representation of this intersection
      */
     @Override

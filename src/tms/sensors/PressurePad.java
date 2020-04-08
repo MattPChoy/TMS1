@@ -12,6 +12,7 @@ public interface PressurePad extends Sensor {
     /**
      * Returns the number of vehicles number of vehicles currently waiting on
        the pressure pad.
+     *
      * @return the current traffic count reported by the pressure pad
      */
     int countTraffic();

@@ -13,7 +13,7 @@ package tms.route;
    hashCode, notify, notifyAll, toString, wait, wait, wait
  */
 public class TrafficLight {
-    private TrafficSignal trafficSignal; // The signal of this TrafficLight.
+    private TrafficSignal signal; // The signal of this TrafficLight.
 
     /**
      * Creates a traffic light with an initial color of TrafficSignal.RED
@@ -27,7 +27,7 @@ public class TrafficLight {
      * @return the displayed traffic light signal
      */
     public TrafficSignal getSignal() {
-        return trafficSignal;
+        return signal;
     }
 
     /**
@@ -38,6 +38,6 @@ public class TrafficLight {
      * @param signal the new traffic light signal
      */
     public void setSignal(TrafficSignal signal) {
-        this.trafficSignal = signal;
+        this.signal = signal;
     }
 }

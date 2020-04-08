@@ -38,6 +38,7 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
      * Floating point division should be used when performing the calculation,
        however the resulting floating point number should be rounded to the
        nearest integer before being returned.
+     *
      * @return congestion levels present at the sensor, 0 to 100
      * @
      */
@@ -58,8 +59,9 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
     }
 
     /**
-     * Returns the level below/above which observed data indicates congestion is occurring on a route
-     * The exact meaning of the threshold differs per sensor implementation
+     * Returns the level below/above which observed data indicates congestion is
+     * occurring on a route. The exact meaning of the threshold differs per
+     * sensor implementation
      *
      * @return the threshold value
      */
@@ -69,8 +71,9 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
     }
 
     /**
-     * Returns the observed average speed of vehicles travelling past this sensor in km/h.
-     * If there are no vehicles whose speed to measure, returns 0.
+     * Returns the observed average speed of vehicles travelling past this
+     * sensor in km/h. If there are no vehicles whose speed to measure,
+     * returns 0.
      *
      * @return the current average speed in km/h reported by the speed camera
      */
@@ -81,6 +84,7 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
 
     /***
      * Returns the string representation of this sensor.
+     *
      * @return the string representation of the DemoSpeedCamera class instance.
      */
     @Override
