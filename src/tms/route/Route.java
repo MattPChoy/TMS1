@@ -2,7 +2,6 @@ package tms.route;
 
 import tms.intersection.Intersection;
 import tms.sensors.DemoPressurePad;
-import tms.sensors.DemoSpeedCamera;
 import tms.sensors.Sensor;
 import tms.util.DuplicateSensorException;
 
@@ -21,21 +20,19 @@ import java.util.*;
    notifyAll, wait, wait, wait
  */
 public class Route {
-    // unique string identifier for this Route. Formatted as Route.FROM:Route.To
+    // Unique string identifier for this Route. Formatted as Route.FROM:Route.To
     private String id;
     private int speedLimit;
     private Intersection from; // Originating intersection for this route.
     // if speedSign == null or trafficLight == null then one DNE for this route.
     private SpeedSign speedSign = null;
     private TrafficLight trafficLight = null;
-    private List<Sensor> sensors = new ArrayList<>() {{
-            add(null); // Pressure Pad placeholder.
-            add(null); // Speed Camera placeholder.
-    }};
+    private List<Sensor> sensors = new ArrayList<>();
 
     /**
      * Creates a new route with the given ID, origin intersection and default
        speed.
+     * Note: id not necessarily unique (no uniqueness checks required).
      * @param defaultSpeed the default speed for the one-way route
      * @param from the intersection from which this route originates from
      * @param id the unique string identifier for this route
@@ -91,22 +88,8 @@ public class Route {
      * @return list of all sensors on this route
      */
     public List<Sensor> getSensors() {
-        List<Sensor> formattedSensors = new ArrayList<>();
-
-        for (Sensor sensorObject : sensors) {
-            if (sensorObject != null) {
-                // Essentially removing all null objects from the sensors array.
-                // Null is added as a placeholder so that when returning the
-                // list of sensors, they will always be in order: see addSensors
-
-                // Additionally, this method inherently creates a new list obj,
-                // so that the original sensors list cannot be edited outside of
-                // this class.
-                formattedSensors.add(sensorObject);
-            }
-        }
-
-        return formattedSensors;
+        // Clone the list so that the instance variable cannot be edited.
+        return new ArrayList<>(sensors);
     }
 
     /**
@@ -189,18 +172,13 @@ public class Route {
        type as the sensor deployed on this route
      */
     public void addSensor(Sensor sensor) throws DuplicateSensorException {
-        if (sensor instanceof DemoPressurePad) {
-            if (sensors.get(0) == null) {
-                sensors.set(0, sensor);
+        for (Sensor existingSensor: sensors) {
+            if (existingSensor.getClass() == sensor.getClass()) {
+                throw new DuplicateSensorException();
             }
-            else throw new DuplicateSensorException();
         }
-        else if (sensor instanceof DemoSpeedCamera) {
-            if (sensors.get(1) == null) {
-                sensors.set(1, sensor);
-            }
-            else throw new DuplicateSensorException();
-        }
+
+        sensors.add(sensor);
     }
 
     /**
@@ -220,7 +198,7 @@ public class Route {
        each sensor on the route. The order in which these lines appear should
        be alphabetical, meaning a line for a pressure plate (PP) should come
        before a line for a speed camera (SC).
-     *
+
      * Each sensor line should contain that sensor's string representation as
        returned by its specific toString method,
        e.g. DemoPressurePad.toString().
@@ -230,29 +208,37 @@ public class Route {
      */
     @Override
     public String toString() {
-        int numberOfSensors = 0;
-        if (sensors.get(0) != null) numberOfSensors++;
-        if (sensors.get(1) != null) numberOfSensors++;
+        // Construct the 'base' of the toString output (which is the same
+        // pattern for every route)
+        StringBuilder output = new StringBuilder();
+        output.append(id).append(":").append(speedLimit).append(":");
+        output.append(sensors.size());
 
-        StringBuilder output = new StringBuilder(id + ":"
-                + speedLimit + ":" + numberOfSensors);
-
-        if (this.hasSpeedSign()) {
-            output.append(":").append(this.getSpeed());
+        // Check if the route has a speed sign and if so, append the
+        // appropriate strings.
+        if (hasSpeedSign()) {
+            output.append(":").append(getSpeed());
         }
 
-        if (sensors.get(0) != null) {
-            if (sensors.get(0) instanceof DemoPressurePad) {
-                output.append(System.lineSeparator()).append(
-                        sensors.get(0).toString());
+        StringBuilder pp = new StringBuilder();
+        StringBuilder sc = new StringBuilder();
+        boolean hasPressurePad = false;
+        boolean hasSpeedCamera = false;
+
+        // Append the sensor representations if any
+        for (Sensor s: sensors) {
+            if (s instanceof DemoPressurePad) {
+                pp.append(System.lineSeparator()).append(s.toString());
+                hasPressurePad = true;
+            }
+            else {
+                sc.append(System.lineSeparator()).append(s.toString());
+                hasSpeedCamera = true;
             }
         }
-        if (sensors.get(1) != null) {
-            if (sensors.get(1) instanceof DemoSpeedCamera) {
-                output.append(System.lineSeparator()).append(
-                        sensors.get(1).toString());
-            }
-        }
+
+        if (hasPressurePad) output.append(pp);
+        if (hasSpeedCamera) output.append(sc);
 
         return output.toString();
     }

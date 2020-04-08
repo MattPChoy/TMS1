@@ -17,6 +17,10 @@ public class TestIntersectionReduceIncomingSpeedSigns {
         Route BA = A.getConnection(B);
 
         BA.addSpeedSign(routeInitialSpeed);
+
+        A.reduceIncomingSpeedSigns();
+
+        Assert.assertEquals(90, A.getConnection(B).getSpeed());
     }
 
     // Test that speeds below 50km/h are not changed by calling the reduceIncomingSpeedSigns method.

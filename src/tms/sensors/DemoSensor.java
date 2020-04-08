@@ -21,10 +21,10 @@ public abstract class DemoSensor implements TimedItem {
     private int seconds = 0;
 
     // The lowest value a sensor's congestion value can be.
-    protected int CONGESTION_LOWER_BOUND = 0;
+    /* protected int CONGESTION_LOWER_BOUND = 0; */
 
     // The highest value a sensor's congestion value can be.
-    protected int CONGESTION_UPPER_BOUND = 100;
+    /* protected int CONGESTION_UPPER_BOUND = 100; */
 
     /**
      * Creates a new sensor, using the given list of data values and threshold.
@@ -87,10 +87,10 @@ public abstract class DemoSensor implements TimedItem {
       */
      @Override
      public String toString() {
-         String unpackedData = Arrays.toString(data).substring(1,
-                 Arrays.toString(data).length() - 1);
+         String unpackedData = Arrays.toString(data)
+                 .substring(1, Arrays.toString(data).length() - 1);
          // Remove the spaces between the data list:
-         // E.g. from 1, 2, 3, 4 to 1,2,3,4.
+         // E.g. from 1, 2, 3, 4 => 1,2,3,4.
          unpackedData = unpackedData.replaceAll(" ", "");
          return (threshold + ":" + unpackedData);
      }

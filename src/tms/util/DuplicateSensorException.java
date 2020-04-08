@@ -23,7 +23,7 @@ public class DuplicateSensorException extends Exception {
        cause.
      */
     public DuplicateSensorException() {
-        super();
+        super(); // Exception constructor
     }
 
     /**

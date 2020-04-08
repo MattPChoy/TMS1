@@ -19,11 +19,12 @@ import java.util.*;
 
 public class Intersection {
     private String id; // the unique string identifier for each intersection
+    // A list containing all the routes created by the addConnection method.
+    private List<Route> incomingRoutes = new ArrayList<>();
     // A list of intersections which are the origin of routes terminating at
     // 'this' intersection.
     List<Intersection> incomingIntersections = new ArrayList<>();
-    // A list containing all the routes created by the addConnection method.
-    private List<Route> incomingRoutes = new ArrayList<>();
+
 
     /**
      * Creates an intersection with the given identifier
@@ -40,7 +41,7 @@ public class Intersection {
 
     /**
      * Returns the ID of this intersection
-     * @return id unique string identifier for each intersection
+     * @return unique string identifier (id) for this instance of intersection.
      */
     public String getId() {
         return id;
@@ -52,7 +53,6 @@ public class Intersection {
      * Adding/removing routes from this list should not affect the
        intersection's internal list of connecting
      routes.
-
      * @return a list of routes;
      */
     public List<Route> getConnections() {
@@ -103,7 +103,7 @@ public class Intersection {
 
      * @requires (defaultSpeed>=0) && (!\exists Intersection from s.t. from
      * in incomingRoutes).
-     * @ensures (\exists Route newRoute s.t. newRoute in incomingRoutes).
+     * @ensures (\exists Route newRoute such that newRoute in incomingRoutes).
      */
     public void addConnection(Intersection from, int defaultSpeed) throws
             IllegalStateException {
@@ -120,6 +120,8 @@ public class Intersection {
             String newRouteID = from.getId();
 
             if (existingRouteID.equals(newRouteID)) {
+                // Note that the objects can't be compared as we are
+                // instantiating
                 throw new IllegalStateException();
             }
         }

@@ -1,32 +1,43 @@
 package tms.sensors;
 
-import tms.util.TimedItemManager;
-
 /**
- * From JavaDoc (https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoPressurePad.html)
+ * From JavaDoc
+ * https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoPressurePad.html
  * public class DemoPressurePad extends DemoSensor implements PressurePad
  *
  * An implementation of a pressure pad sensor
  *
- * Inherited methods from class DemoSensor: getCurrentValue, getThreshold, oneSecond
- * Inherited methods from class Object    : clone, finalize, getClass, notify, notifyAll, wait, wait, wait
+ * Inherited methods from class DemoSensor: getCurrentValue, getThreshold,
+ *                                          oneSecond
+ * Inherited methods from class Object    : clone, finalize, getClass, notify,
+ *                                          notifyAll, wait, wait, wait
  * Inherited methods from interface Sensor: getThreshold
  * */
 
 public class DemoPressurePad extends DemoSensor implements PressurePad {
+    // Note: Previously declared in DemoSensor.java but not sure about testing
+    // implementation. Thus I have moved it into the class file so that this
+    // class can access it even if my DemoSensor class is unavailable the code
+    // doesn't break;
+    private final int CONGESTION_LOWER_BOUND = 0;
+    private final int CONGESTION_UPPER_BOUND = 100;
 
     /**
      * Creates a new sensor, using the given list of data values and threshold.
-     * The initial value returned by getCurrentValue() should be the first element of the given data array.
-     * <p>
-     * The sensor should be registered as a timed item, see TimedItemManager.registerTimedItem(TimedItem).
+     * The initial value returned by getCurrentValue() should be the first
+     * element of the given data array.
+
+     * The sensor should be registered as a timed item, see
+       TimedItemManager.registerTimedItem(TimedItem).
      *
      * @param data      a non-empty array of data values
-     * @param threshold a threshold value that indicates which values represent high congestion
+     * @param threshold a threshold value that indicates which values represent
+     *                  high congestion
      * @requires data.length > 0
      */
     public DemoPressurePad(int[] data, int threshold) {
-        super(data, threshold); // DemoSensor constructor stores values in super.data, super.threshold.
+        // DemoSensor constructor stores values in super.data, super.threshold.
+        super(data, threshold);
 
     }
 
@@ -42,12 +53,14 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
     }
 
     /**
-     * Calculates the congestion rate as the percentage given by countTraffic() divided by getThreshold().
-     * For example, a route with an current traffic count of 45 vehicles and a threshold value of 60 vehicles would be
-       75 percent congested.
+     * Calculates the congestion rate as the percentage given by countTraffic()
+       divided by getThreshold().
+     * For example, a route with an current traffic count of 45 vehicles and a
+       threshold value of 60 vehicles would be 75 percent congested.
      *
-     * Floating point division should be used when performing the calculation, however the resulting floating point
-       number should be rounded to the nearest integer before being returned.
+     * Floating point division should be used when performing the calculation,
+       however the resulting floating point number should be rounded to the
+       nearest integer before being returned.
      *
      * @return congestion levels present at the sensor, 0 to 100
      */
@@ -55,7 +68,6 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
     public int getCongestion() {
         float count = (float) countTraffic();
         float threshold = (float) getThreshold();
-
         int congestion = (int) ((count/threshold) * 100.0);
 
         // Using Math.max() and Math.min() is the same as bounding the value of

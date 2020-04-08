@@ -39,7 +39,7 @@ public class TimedItemManager implements TimedItem {
     }
 
     /**
-     * A static method to register a TimedItem such that it is called on
+     * A method to register a TimedItem such that it is called on
        oneSecond().
      * @param timedItem a TimedItem to register with the manager
      */

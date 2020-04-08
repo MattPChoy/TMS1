@@ -17,7 +17,7 @@ public class IntersectionTest{
     private Intersection A, B, C, D, E, F, G, H;
 
     @Before
-    public void setup(){
+    public void setup() {
         A = new Intersection("A");
         B = new Intersection("B");
         C = new Intersection("C");
@@ -29,18 +29,18 @@ public class IntersectionTest{
     }
 
     @Test
-    public void intersectionConstructor_correctID(){
+    public void intersectionConstructor_correctID() {
         assertEquals("A", A.getId());
     }
 
     @Test
-    public void intersectionConstructor_emptyStringID(){
+    public void intersectionConstructor_emptyStringID() {
         Intersection empty = new Intersection("");
         assertEquals("", empty.getId());
     }
 
     @Test
-    public void intersectionConstructor_nullID(){
+    public void intersectionConstructor_nullID() {
         Intersection nullIntersection = new Intersection(null);
         assertNull(nullIntersection.getId());
     }
@@ -64,7 +64,7 @@ public class IntersectionTest{
     }
 
     @Test
-    public void addConnection_throwsIllegalArgumentException(){
+    public void addConnection_throwsIllegalArgumentException() {
         boolean success = false;
 
         try{
@@ -81,7 +81,7 @@ public class IntersectionTest{
     }
 
     @Test
-    public void addConnection_throwsIllegalStateException(){
+    public void addConnection_throwsIllegalStateException() {
         boolean success = false;
 
         A.addConnection(B, 10);
@@ -106,18 +106,16 @@ public class IntersectionTest{
     }
 
     @Test
-    public void getConnection_throwsRouteNotFoundException(){
+    public void getConnection_throwsRouteNotFoundException() {
         boolean success = false;
-        try{
+        try {
             A.getConnection(B);
         }
         catch (RouteNotFoundException r){
             success = true;
         }
         finally {
-            if (!success){
-                fail();
-            }
+            if (!success) fail();
         }
     }
 

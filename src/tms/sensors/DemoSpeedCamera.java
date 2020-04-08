@@ -1,13 +1,17 @@
 package tms.sensors;
 
-import tms.util.TimedItemManager;
-
 /**
  * From JavaDoc
  * https://csse2002.uqcloud.net/assignment/1/tms/sensors/DemoSpeedCamera.html
  * public class DemoSpeedCamera extends DemoSensor implements SpeedCamera
  * */
 public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
+    // Note: Previously declared in DemoSensor.java but not sure about testing
+    // implementation. Thus I have moved it into the class file so that this
+    // class can access it even if my DemoSensor class is unavailable the code
+    // doesn't break;
+    private final int CONGESTION_LOWER_BOUND = 0;
+    private final int CONGESTION_UPPER_BOUND = 100;
     /**
      * Creates a new sensor, using the given list of data values and threshold.
      * The initial value returned by getCurrentValue() should be the first
