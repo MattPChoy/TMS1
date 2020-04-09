@@ -59,18 +59,6 @@ public class DemoSpeedCamera extends DemoSensor implements SpeedCamera {
     }
 
     /**
-     * Returns the level below/above which observed data indicates congestion is
-     * occurring on a route. The exact meaning of the threshold differs per
-     * sensor implementation
-     *
-     * @return the threshold value
-     */
-    @Override
-    public int getThreshold() {
-        return super.getThreshold();
-    }
-
-    /**
      * Returns the observed average speed of vehicles travelling past this
      * sensor in km/h. If there are no vehicles whose speed to measure,
      * returns 0.

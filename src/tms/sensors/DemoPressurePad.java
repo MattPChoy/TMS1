@@ -78,18 +78,6 @@ public class DemoPressurePad extends DemoSensor implements PressurePad {
                 Math.min(congestion, CONGESTION_UPPER_BOUND));
     }
 
-    /**
-     * Returns the level below/above which observed data indicates congestion is
-       occurring on a route
-     * The exact meaning of the threshold differs per sensor implementation
-     *
-     * @return the threshold value
-     */
-    @Override
-    public int getThreshold() {
-        return super.getThreshold();
-    }
-
     /***
      * Returns the string representation of this sensor.
      *
